@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4gB-EZ-Dy3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Workouts Table View Controller-->
+        <scene sceneID="xUg-88-fF2">
+            <objects>
+                <tableViewController id="Bkv-jI-Azl" customClass="WorkoutsTableViewController" customModule="IronLogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wYz-zJ-Y7O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutsCell" rowHeight="116" id="JlK-NR-TNa" customClass="WorkoutsTableViewCell" customModule="IronLogs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="116"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JlK-NR-TNa" id="VFA-gd-adL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-YI-2Ow">
+                                            <rect key="frame" x="28" y="19" width="42" height="49"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-JN-77J">
+                                            <rect key="frame" x="28" y="76" width="34.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ywl-YI-2Ow" firstAttribute="leading" secondItem="VFA-gd-adL" secondAttribute="leadingMargin" constant="8" id="KU5-ye-LhO"/>
+                                        <constraint firstItem="ywl-YI-2Ow" firstAttribute="top" secondItem="VFA-gd-adL" secondAttribute="topMargin" constant="8" id="ZtB-Xu-Ftx"/>
+                                        <constraint firstItem="fjx-JN-77J" firstAttribute="leading" secondItem="VFA-gd-adL" secondAttribute="leadingMargin" constant="8" id="cUt-jP-oxg"/>
+                                        <constraint firstItem="fjx-JN-77J" firstAttribute="top" secondItem="ywl-YI-2Ow" secondAttribute="bottom" constant="8" id="eK1-3h-T6c"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fjx-JN-77J" secondAttribute="bottom" constant="8" id="jZx-lT-ubK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="fjx-JN-77J" id="z7G-zv-RRK"/>
+                                    <outlet property="titleLabel" destination="ywl-YI-2Ow" id="7Lx-VY-LJ9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bkv-jI-Azl" id="eq2-gL-jeR"/>
+                            <outlet property="delegate" destination="Bkv-jI-Azl" id="2iU-Vv-u5y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Vv2-tJ-rtD">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="ivO-cr-2G3">
+                            <connections>
+                                <action selector="homeButtonTapped:" destination="Bkv-jI-Azl" id="3JX-6s-yf5"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="t9A-BU-6Ed">
+                                <connections>
+                                    <action selector="plusPressed:" destination="Bkv-jI-Azl" id="B2c-Ek-NSe"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="pencil" catalog="system" id="NeA-ga-OYA">
+                                <connections>
+                                    <action selector="updateWorkouts:" destination="Bkv-jI-Azl" id="PIR-ft-YKI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="NeA-ga-OYA" id="rpc-Kj-2Mh"/>
+                        <segue destination="SW0-1f-qiX" kind="show" identifier="toExercises" id="hqz-MZ-bfN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fx-Lg-Xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910.14492753623199" y="85.714285714285708"/>
+        </scene>
+        <!--Exercises Table View Controller-->
+        <scene sceneID="nBc-oE-dt8">
+            <objects>
+                <tableViewController id="SW0-1f-qiX" customClass="ExercisesTableViewController" customModule="IronLogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="inc-dt-UqJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="l0K-D5-dC6">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0K-D5-dC6" id="Qeh-70-0R5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SW0-1f-qiX" id="9pf-wc-pZG"/>
+                            <outlet property="delegate" destination="SW0-1f-qiX" id="mhO-ma-DYf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eQa-4E-Rhe">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Mkd-Au-0T4">
+                                <connections>
+                                    <action selector="addExerciseButonTapped:" destination="SW0-1f-qiX" id="cP2-qr-kdQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="pencil" catalog="system" id="CSl-ML-c4e">
+                                <connections>
+                                    <action selector="updateExercisesButtonTapped:" destination="SW0-1f-qiX" id="6em-Vt-Lx5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Sun-tE-Ogp" kind="show" identifier="toSets" id="w5s-OD-Hdy"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wye-CX-zuR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="86"/>
+        </scene>
+        <!--Sets Table View Controller-->
+        <scene sceneID="Hjv-iY-f9I">
+            <objects>
+                <tableViewController id="Sun-tE-Ogp" customClass="SetsTableViewController" customModule="IronLogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XZe-l4-9u7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d0k-Qo-jC0">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d0k-Qo-jC0" id="dEN-ne-wAb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sun-tE-Ogp" id="Y4c-Ae-8Wp"/>
+                            <outlet property="delegate" destination="Sun-tE-Ogp" id="FzG-8j-AwC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="txg-mL-Bnh">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="JnO-vh-Vwa">
+                                <connections>
+                                    <action selector="addSetTapped:" destination="Sun-tE-Ogp" id="Td8-6C-vyy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="pencil" catalog="system" id="7HQ-M6-NC7">
+                                <connections>
+                                    <action selector="updateSetsTapped:" destination="Sun-tE-Ogp" id="r2l-MP-6az"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="7HQ-M6-NC7" id="Pzl-4D-lNf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgt-dk-MP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578" y="86"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y3C-r2-WTE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4gB-EZ-Dy3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lSM-nB-C34">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bkv-jI-Azl" kind="relationship" relationship="rootViewController" id="t9I-cF-MOp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOF-cW-RBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
