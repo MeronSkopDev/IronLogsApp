@@ -8,6 +8,8 @@
 
 import Foundation
 
+///These protocols are used to delegate all the TextFields in the "Workout" group
+
 protocol editTextObserversDelegate:class {
     func getTextOnChange(text:String)
 }

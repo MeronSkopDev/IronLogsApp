@@ -18,10 +18,14 @@ class MacrosTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fatsLabel: UILabel!
     
+    /**
+    This method
+    Filles up all the Labels with the data from the "DayOfEating"
+    */
     func populateCell(dayOfEating:DayOfEating?){
-        caloriesLabel.text = "CAL: \(dayOfEating?.overallCalories ?? 0)"
-        proteinLabel.text = "P: \(dayOfEating?.overallProtein ?? 0)"
-        carbsLabel.text = "C: \(dayOfEating?.overallCarbs ?? 0)"
-        fatsLabel.text = "F: \(dayOfEating?.overallFats ?? 0)"
+        caloriesLabel.text = "CAL: \(dayOfEating?.calculatedOverallCalories ?? 0)"
+        proteinLabel.text = "P: \(dayOfEating?.calculatedOverallProtein ?? 0)"
+        carbsLabel.text = "C: \(dayOfEating?.calculatedOverallCarbs ?? 0)"
+        fatsLabel.text = "F: \(dayOfEating?.calculatedOverallFats ?? 0)"
     }
 }

@@ -29,10 +29,18 @@ class HomeViewController: UIViewController {
         }
     }
     
+    /**
+     This method
+     Moves user to "WorkoutsTableViewController" if he is logged in to Firebase
+     */
     @IBAction func workoutsButtonTapped(_ sender: UIButton) {
         Router.shared.chooseScreen(ifLogeedInGoTo: "Workouts")
     }
     
+    /**
+    This method
+    Moves user to "DaysOfEatingTableViewController"
+    */
     @IBAction func mealsButtonTapped(_ sender: UIButton) {
         let mealsStoryboard = UIStoryboard(name: "Meals", bundle: .main)
         Router.shared.window?.rootViewController = mealsStoryboard.instantiateInitialViewController()

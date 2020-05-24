@@ -11,11 +11,11 @@ import UIKit
 import CoreData
 
 class DaysOfEatingTableViewController: UITableViewController {
-
+    
     let mViewModel = DayOfEatingTableViewModel()
     
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
-       let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
+        let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         
         request.sortDescriptors = [
             NSSortDescriptor(key: "dateOfCreation", ascending: true)
@@ -30,10 +30,13 @@ class DaysOfEatingTableViewController: UITableViewController {
         return fetchController
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetch.delegate = self
-        
         do{
             try fetch.performFetch()
         }catch let err{
@@ -41,29 +44,29 @@ class DaysOfEatingTableViewController: UITableViewController {
             print(err.localizedDescription)
         }
     }
-
-
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetch.sections?[section].numberOfObjects ?? 0
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayOfEatingCell", for: indexPath)
-
+        
         if let cell = cell as? DayOfEatingTableViewCell{
             let dayOfEating = fetch.object(at: indexPath)
             cell.populateCell(dayOfEating: dayOfEating)
         }
-
+        
         return cell
     }
     
-
+    
     
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -71,7 +74,7 @@ class DaysOfEatingTableViewController: UITableViewController {
         return true
     }
     
-
+    
     
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -83,13 +86,20 @@ class DaysOfEatingTableViewController: UITableViewController {
             CM.shared.saveContext()
         }
     }
-
     
+    /**
+     This method
+     Moves to HomeViewController
+     */
     @IBAction func goHome(_ sender: UIBarButtonItem) {
         let homeStoryboard = UIStoryboard(name: "Home", bundle: .main)
         Router.shared.window?.rootViewController = homeStoryboard.instantiateInitialViewController()
     }
     
+    /**
+     This method
+     Adds a new "DayOfEating" to the database
+     */
     @IBAction func addDayOfEating(_ sender: UIBarButtonItem) {
         mViewModel.createNewDayOfEating()
     }
@@ -98,11 +108,13 @@ class DaysOfEatingTableViewController: UITableViewController {
         performSegue(withIdentifier: "toFoodItems", sender: fetch.object(at: indexPath))
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: DayOfEating) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? FoodItemsTableViewController{
-            dest.fatherDayOfEating = sender
+            let dayOfEating = sender as! DayOfEating
+            dest.currentDayOfEating = dayOfEating
         }
     }
+    
     
 }
 
@@ -115,9 +127,6 @@ extension DaysOfEatingTableViewController:NSFetchedResultsControllerDelegate{
             break
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .automatic)
-            break
-        case .update:
-            //MARK: Here you populate the cell that was updated with the new data
             break
         default:
             break

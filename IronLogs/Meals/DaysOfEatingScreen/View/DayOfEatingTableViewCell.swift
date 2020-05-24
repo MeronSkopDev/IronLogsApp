@@ -22,12 +22,17 @@ class DayOfEatingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    /**
+    This method
+    Filles up all the Labels with the data from the "DayOfEating"
+    Formattes the date gotten from the "DayOfEating" into a string to show the user
+    */
     func populateCell(dayOfEating:DayOfEating){
         titleLabel.text = dayOfEating.title
-        carbsLabel.text = "C: \(dayOfEating.overallCarbs)"
-        caloriesLabel.text = "CAL: \(dayOfEating.overallCarbs)"
-        fatsLabel.text = "F: \(dayOfEating.overallFats)"
-        proteinLabel.text = "P\(dayOfEating.overallProtein)"
+        carbsLabel.text = "C: \(dayOfEating.calculatedOverallCarbs)"
+        caloriesLabel.text = "CAL: \(dayOfEating.calculatedOverallCalories)"
+        fatsLabel.text = "F: \(dayOfEating.calculatedOverallFats)"
+        proteinLabel.text = "P\(dayOfEating.calculatedOverallProtein)"
         
         if dayOfEating.dateOfCreation != nil, let date = dayOfEating.dateOfCreation{
             let formatter = DateFormatter()

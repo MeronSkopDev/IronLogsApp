@@ -10,6 +10,10 @@ import Foundation
 
 extension FoodItem{
     
+    /**
+     This init
+     A conviniance init made to have a simple and easy way to create a new "FoodItem"
+     */
     convenience init(timeEaten:Date,calories:Int16,carbs:Int16,fats:Int16,protein:Int16,name:String){
         self.init(context: CM.shared.context)
         

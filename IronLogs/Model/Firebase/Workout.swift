@@ -133,7 +133,7 @@ class WorkoutsInUse:ShowHud{
     }
     
     private static var workoutsInUse:WorkoutsInUse = {
-        
+        HUD.show(.progress)
         var workoutsInUse = WorkoutsInUse()
         
         FSData.getUserWorkouts(uid: currentUserUid) { (workouts) in
@@ -166,7 +166,6 @@ class WorkoutsInUse:ShowHud{
                 return
             }
             workoutsInUse.workouts.value = workouts
-            HUD.flash(.success)
         }
     }
     

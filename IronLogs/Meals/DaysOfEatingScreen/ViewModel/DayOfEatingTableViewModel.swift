@@ -9,6 +9,10 @@
 import Foundation
 
 struct DayOfEatingTableViewModel {
+    /**
+     This method
+     Adds a new "DayOfEating' to the database
+     */
     func createNewDayOfEating(){
         let _ = DayOfEating(title: "New day",
         calories: 0,

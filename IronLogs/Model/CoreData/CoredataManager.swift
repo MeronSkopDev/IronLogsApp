@@ -19,6 +19,10 @@ class CM{
         return persistentContainer.viewContext
     }
     
+    /**
+     This method
+     Returns all the "DayOfEating" objects
+     */
     func getDaysOfEating() -> [DayOfEating]{
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         do{
@@ -31,18 +35,11 @@ class CM{
         }
     }
     
-    func getFoodItems() -> [FoodItem]{
-        let request = NSFetchRequest<FoodItem>(entityName: "FoodItem")
-        do{
-            let foodItems = try context.fetch(request)
-            return foodItems
-        }catch let err{
-            print("------ Couldent get foodItems ------")
-            print(err.localizedDescription)
-            return[]
-        }
-    }
-    
+    /**
+     This lazy var
+     A pre made method by Xcode
+     Returns the "container" that has all the saved data in it
+     */
     lazy var persistentContainer: NSPersistentContainer = {
            let container = NSPersistentContainer(name: "IronLogs")
            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -53,6 +50,10 @@ class CM{
            return container
        }()
 
+    /**
+     This method
+     Saves all changes done to the objects from the container
+     */
        func saveContext () {
            let context = persistentContainer.viewContext
            if context.hasChanges {

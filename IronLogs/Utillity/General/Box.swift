@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Box<T>{
+public class Box<T>{
     typealias Listener = (T) -> Void
     var listener:Listener?
     

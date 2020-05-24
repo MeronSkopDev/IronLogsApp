@@ -135,8 +135,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Lfi-Y6-buD">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="GM4-p4-C3D"/>
-                            <barButtonItem title="Item" image="book.fill" catalog="system" id="7h2-Zc-SRA"/>
+                            <barButtonItem systemItem="add" id="GM4-p4-C3D">
+                                <connections>
+                                    <action selector="addFoodItem:" destination="z4X-PE-aG0" id="JQX-IJ-zPo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="book.fill" catalog="system" id="7h2-Zc-SRA">
+                                <connections>
+                                    <action selector="goToAPI:" destination="z4X-PE-aG0" id="H9n-94-k7s"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

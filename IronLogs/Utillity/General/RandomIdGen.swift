@@ -9,6 +9,10 @@
 import Foundation
 
 struct RandomIdGen {
+    /**
+     This method
+     Returns a random id
+     */
     static func generateId() -> String{
         let newID = UUID()
         return newID.uuidString

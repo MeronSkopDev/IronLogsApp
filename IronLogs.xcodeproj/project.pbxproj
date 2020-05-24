@@ -61,6 +61,10 @@
 		1F03610D24734640005A588C /* DayOfEatingTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F03610B24734640005A588C /* DayOfEatingTitleTableViewCell.xib */; };
 		1F03611024734ABD005A588C /* MacrosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F03610E24734ABD005A588C /* MacrosTableViewCell.swift */; };
 		1F03611124734ABD005A588C /* MacrosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F03610F24734ABD005A588C /* MacrosTableViewCell.xib */; };
+		1F5B97662477AD1100F3428A /* FoodItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B97642477AD1100F3428A /* FoodItemTableViewCell.swift */; };
+		1F5B97672477AD1100F3428A /* FoodItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B97652477AD1100F3428A /* FoodItemTableViewCell.xib */; };
+		1F5B976A24788E6F00F3428A /* SpoonacularManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B976924788E6F00F3428A /* SpoonacularManager.swift */; };
+		1F5B976D2478B70A00F3428A /* FoodItemsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B976C2478B70A00F3428A /* FoodItemsTableViewModel.swift */; };
 		CDD4B1F00E9E5836AAEB1859 /* Pods_IronLogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B97E715C6394C7CAA283F11 /* Pods_IronLogs.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +125,10 @@
 		1F03610B24734640005A588C /* DayOfEatingTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayOfEatingTitleTableViewCell.xib; sourceTree = "<group>"; };
 		1F03610E24734ABD005A588C /* MacrosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosTableViewCell.swift; sourceTree = "<group>"; };
 		1F03610F24734ABD005A588C /* MacrosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacrosTableViewCell.xib; sourceTree = "<group>"; };
+		1F5B97642477AD1100F3428A /* FoodItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemTableViewCell.swift; sourceTree = "<group>"; };
+		1F5B97652477AD1100F3428A /* FoodItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemTableViewCell.xib; sourceTree = "<group>"; };
+		1F5B976924788E6F00F3428A /* SpoonacularManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularManager.swift; sourceTree = "<group>"; };
+		1F5B976C2478B70A00F3428A /* FoodItemsTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemsTableViewModel.swift; sourceTree = "<group>"; };
 		7B97E715C6394C7CAA283F11 /* Pods_IronLogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IronLogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9500AF3C76E40101AB703A /* Pods-IronLogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronLogs.debug.xcconfig"; path = "Target Support Files/Pods-IronLogs/Pods-IronLogs.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1625D7950FC703BD5C9C63 /* Pods-IronLogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronLogs.release.xcconfig"; path = "Target Support Files/Pods-IronLogs/Pods-IronLogs.release.xcconfig"; sourceTree = "<group>"; };
@@ -412,6 +420,7 @@
 		1F0360E4247206A6005A588C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F5B976824788E4900F3428A /* SpoonacularAPI */,
 				1F03608E246FA9D6005A588C /* Firebase */,
 				1F03608F246FA9DF005A588C /* CoreData */,
 			);
@@ -421,6 +430,7 @@
 		1F0360EE24720850005A588C /* Meals */ = {
 			isa = PBXGroup;
 			children = (
+				1F5B976E2478C05300F3428A /* RecepiesScreen */,
 				1F036102247340D4005A588C /* FoodItemsScreen */,
 				1F0360F824720C75005A588C /* DaysOfEatingScreen */,
 				1F0360EF2472085F005A588C /* Meals.storyboard */,
@@ -465,6 +475,7 @@
 		1F036102247340D4005A588C /* FoodItemsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1F5B976B2478B6EF00F3428A /* ViewModel */,
 				1F03610624734117005A588C /* View */,
 				1F036103247340DC005A588C /* Controller */,
 			);
@@ -510,8 +521,33 @@
 		1F0361092473415F005A588C /* FoodItemCell */ = {
 			isa = PBXGroup;
 			children = (
+				1F5B97642477AD1100F3428A /* FoodItemTableViewCell.swift */,
+				1F5B97652477AD1100F3428A /* FoodItemTableViewCell.xib */,
 			);
 			path = FoodItemCell;
+			sourceTree = "<group>";
+		};
+		1F5B976824788E4900F3428A /* SpoonacularAPI */ = {
+			isa = PBXGroup;
+			children = (
+				1F5B976924788E6F00F3428A /* SpoonacularManager.swift */,
+			);
+			path = SpoonacularAPI;
+			sourceTree = "<group>";
+		};
+		1F5B976B2478B6EF00F3428A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F5B976C2478B70A00F3428A /* FoodItemsTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F5B976E2478C05300F3428A /* RecepiesScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecepiesScreen;
 			sourceTree = "<group>";
 		};
 		715BC7237A0C9A341BEE67E8 /* Pods */ = {
@@ -588,6 +624,7 @@
 				1F036097246FB898005A588C /* Home.storyboard in Resources */,
 				1F0360DD24716F7F005A588C /* ExerciseNameTableViewCell.xib in Resources */,
 				1F0360E024716F7F005A588C /* SuperSetTableViewCell.xib in Resources */,
+				1F5B97672477AD1100F3428A /* FoodItemTableViewCell.xib in Resources */,
 				1F03609F247165EF005A588C /* Workouts.storyboard in Resources */,
 				1F0360F02472085F005A588C /* Meals.storyboard in Resources */,
 				1F036080246F9B00005A588C /* GoogleService-Info.plist in Resources */,
@@ -674,11 +711,13 @@
 				1F0360AC247167E8005A588C /* TextFieldDelegate.swift in Sources */,
 				1F03606C246F98AC005A588C /* ViewController.swift in Sources */,
 				1F03610524734114005A588C /* FoodItemsTableViewController.swift in Sources */,
+				1F5B976A24788E6F00F3428A /* SpoonacularManager.swift in Sources */,
 				1F036093246FB706005A588C /* Router.swift in Sources */,
 				1F0360A22471671C005A588C /* WorkoutsTableViewController.swift in Sources */,
 				1F0360DA24716F7F005A588C /* SetsTableViewController.swift in Sources */,
 				1F0360DB24716F7F005A588C /* SingleExerciseTableViewModel.swift in Sources */,
 				1F0360A6247167A3005A588C /* Constants.swift in Sources */,
+				1F5B97662477AD1100F3428A /* FoodItemTableViewCell.swift in Sources */,
 				1F0360ED24720834005A588C /* FoodItem.swift in Sources */,
 				1F0360CA24716D77005A588C /* ExercisesTableViewModel.swift in Sources */,
 				1F036068246F98AC005A588C /* AppDelegate.swift in Sources */,
@@ -704,6 +743,7 @@
 				1F0360AF247168AE005A588C /* Workout.swift in Sources */,
 				1F0360FC24720CCD005A588C /* DaysOfEatingTableViewController.swift in Sources */,
 				1F03611024734ABD005A588C /* MacrosTableViewCell.swift in Sources */,
+				1F5B976D2478B70A00F3428A /* FoodItemsTableViewModel.swift in Sources */,
 				1F03606A246F98AC005A588C /* SceneDelegate.swift in Sources */,
 				1F0360DC24716F7F005A588C /* ExerciseNameTableViewCell.swift in Sources */,
 				1F0360B2247169C6005A588C /* WorkoutsTableViewCell.swift in Sources */,

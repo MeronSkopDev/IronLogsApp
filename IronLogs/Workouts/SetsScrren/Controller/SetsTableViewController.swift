@@ -19,14 +19,6 @@ class SetsTableViewController: UITableViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    override func viewDidAppear(_ animated: Bool) {
-        //MARK: Think of a smart way to populate the cells instead of reloading the tableView constantly
-            //Need to populate when: 1) a cell contents is changed 2) a cell is added 3) [For superSets] when the exercise name changes
-        WorkoutsInUse.shared().workouts.bind {[weak self] (workouts) -> Void in
-            self?.tableView.reloadData()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -165,6 +157,7 @@ class SetsTableViewController: UITableViewController {
      Saves any changes the user made in the database
      */
     @IBAction func updateSetsTapped(_ sender: UIBarButtonItem) {
+        tableView.reloadData()
         updateExerciseTitleBool.value = true
         saveButton.isEnabled = false
         guard let workoutsIndex = workoutsIndex else{
@@ -192,7 +185,6 @@ class SetsTableViewController: UITableViewController {
      Adds a new set to "WorkoutsInUse.shared()" in the exercise the user is currently looking at
      */
     @IBAction func addSetTapped(_ sender: Any) {
-        
         updateExerciseTitleBool.value = true
         createAndShowSetChoiceSheet()
         
@@ -213,7 +205,7 @@ class SetsTableViewController: UITableViewController {
                         .workouts.value[(self?.workoutsIndex)!]
                         .exercises?[(self?.exercisesIndex)!]
                         .sets?.append((self?.mViewModel.getNewSet())!)
-                    
+                    self?.tableView.reloadData()
                 }
             }
         }
@@ -225,6 +217,7 @@ class SetsTableViewController: UITableViewController {
                         .workouts.value[(self?.workoutsIndex)!]
                         .exercises?[(self?.exercisesIndex)!]
                         .sets?.append((self?.mViewModel.getNewSuperSet())!)
+                    self?.tableView.reloadData()
                 }
             }
         }
@@ -232,6 +225,7 @@ class SetsTableViewController: UITableViewController {
         setChoiceSheet.addAction(addSuperSet)
         setChoiceSheet.addAction(cancel)
         present(setChoiceSheet, animated: true)
+        
     }
     
 }
