@@ -48,6 +48,7 @@ class FoodItemsTableViewController: UITableViewController {
         if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "macrosCell", for: indexPath) as! MacrosTableViewCell
             cell.populateCell(dayOfEating: currentDayOfEating)
+            //MARK: Update this cell when the user changes the "FoodIten" cell values
             return cell
         }
         
@@ -103,6 +104,11 @@ class FoodItemsTableViewController: UITableViewController {
      Moves to "RecepiesTableViewController"
      */
     @IBAction func goToAPI(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "toAPIFoods", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        ///If you need to pass stuff to "RecepieTableViewController"
     }
     
     
