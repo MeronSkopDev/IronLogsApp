@@ -26,3 +26,9 @@ protocol SuperSetDelegate:class{
     func getSuperRepsOnChange(reps:Int, currentSetIndex: Int)
     func getSuperNameOnChange(text:String, currentSetIndex: Int)
 }
+
+///This protocl is used to get the querys for finding recepies from "SearchTableViewCell" into "RecepiesTableViewController"
+
+protocol ApiFoodItemsQuerysDelegate {
+    func getFoodItems(querys:[String:String])
+}

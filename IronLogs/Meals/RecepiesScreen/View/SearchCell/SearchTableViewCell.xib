@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="91" id="KGk-i7-Jjw" customClass="SearchTableViewCell" customModule="IronLogs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Yqg-lu-FVv">
+                        <rect key="frame" x="8" y="8" width="346" height="37"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9L-ql-wXy">
+                                <rect key="frame" x="0.0" y="1.5" width="85" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-J4-qNf">
+                                <rect key="frame" x="87" y="1.5" width="85" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Carbs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-Em-qlC">
+                                <rect key="frame" x="174" y="1.5" width="85" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fats" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-LY-H3A">
+                                <rect key="frame" x="261" y="1.5" width="85" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIb-yd-mJQ">
+                        <rect key="frame" x="157" y="53" width="48" height="30"/>
+                        <state key="normal" title="Search"/>
+                        <connections>
+                            <action selector="searchButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xKn-Hg-f2q"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="XIb-yd-mJQ" secondAttribute="trailing" constant="137" id="0nM-4W-JWk"/>
+                    <constraint firstItem="XIb-yd-mJQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="137" id="dOx-QH-Jti"/>
+                    <constraint firstItem="Yqg-lu-FVv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pKo-K0-ddl"/>
+                    <constraint firstAttribute="bottom" secondItem="XIb-yd-mJQ" secondAttribute="bottom" constant="8" id="pZW-a0-zOz"/>
+                    <constraint firstItem="Yqg-lu-FVv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="paV-pK-vEj"/>
+                    <constraint firstItem="XIb-yd-mJQ" firstAttribute="top" secondItem="Yqg-lu-FVv" secondAttribute="bottom" constant="8" id="q1g-PI-E6Q"/>
+                    <constraint firstAttribute="trailing" secondItem="Yqg-lu-FVv" secondAttribute="trailing" constant="8" id="rsE-cz-BEe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="calorieTextField" destination="D9L-ql-wXy" id="duW-3Q-FsW"/>
+                <outlet property="carbsTextField" destination="ovM-Em-qlC" id="H9z-Do-7Nq"/>
+                <outlet property="fatsTextField" destination="RUj-LY-H3A" id="8pC-t4-P7F"/>
+                <outlet property="proteinTextField" destination="a2b-J4-qNf" id="gn0-vk-i2I"/>
+            </connections>
+            <point key="canvasLocation" x="107.24637681159422" y="100.78125"/>
+        </tableViewCell>
+    </objects>
+</document>

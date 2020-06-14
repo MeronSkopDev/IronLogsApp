@@ -10,8 +10,14 @@ import UIKit
 
 class FoodItemsTableViewController: UITableViewController {
     
+    //MARK: Make it so each day of eating saves the logged in users uid so this screen will only show his meals
+    
     var currentDayOfEating:DayOfEating?
     let mViewModel = FoodItemsTableViewModel()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,11 +110,17 @@ class FoodItemsTableViewController: UITableViewController {
      Moves to "RecepiesTableViewController"
      */
     @IBAction func goToAPI(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "toAPIFoods", sender: nil)
+        performSegue(withIdentifier: "toAPIFoods", sender: currentDayOfEating)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        ///If you need to pass stuff to "RecepieTableViewController"
+        guard let dest = segue.destination as? RecepieTableViewController else{
+         return
+        }
+        guard let currentDayOfEating = sender as? DayOfEating else{
+            return
+        }
+        dest.currentDayOfEating = currentDayOfEating
     }
     
     

@@ -69,6 +69,12 @@
 		1F7172BA247BE6CF00997523 /* RecepieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7172B9247BE6CF00997523 /* RecepieTableViewController.swift */; };
 		1F7172BF247BE89300997523 /* RecepieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7172BD247BE89300997523 /* RecepieTableViewCell.swift */; };
 		1F7172C0247BE89300997523 /* RecepieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F7172BE247BE89300997523 /* RecepieTableViewCell.xib */; };
+		1FB44AD8248E8F28002BE17A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB44AD6248E8F28002BE17A /* SearchTableViewCell.swift */; };
+		1FB44AD9248E8F28002BE17A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */; };
+		1FB44ADC248E9327002BE17A /* RecepieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */; };
+		1FBC9E9024933C3F00E25695 /* SingleRecepieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC9E8F24933C3F00E25695 /* SingleRecepieViewController.swift */; };
+		1FBC9E9224933FC000E25695 /* RecepieUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC9E9124933FC000E25695 /* RecepieUrl.swift */; };
+		1FDAC30E2495A1D500BB0393 /* SingleRecepieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAC30D2495A1D500BB0393 /* SingleRecepieViewModel.swift */; };
 		CDD4B1F00E9E5836AAEB1859 /* Pods_IronLogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B97E715C6394C7CAA283F11 /* Pods_IronLogs.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +143,12 @@
 		1F7172B9247BE6CF00997523 /* RecepieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewController.swift; sourceTree = "<group>"; };
 		1F7172BD247BE89300997523 /* RecepieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewCell.swift; sourceTree = "<group>"; };
 		1F7172BE247BE89300997523 /* RecepieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepieTableViewCell.xib; sourceTree = "<group>"; };
+		1FB44AD6248E8F28002BE17A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewModel.swift; sourceTree = "<group>"; };
+		1FBC9E8F24933C3F00E25695 /* SingleRecepieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecepieViewController.swift; sourceTree = "<group>"; };
+		1FBC9E9124933FC000E25695 /* RecepieUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieUrl.swift; sourceTree = "<group>"; };
+		1FDAC30D2495A1D500BB0393 /* SingleRecepieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecepieViewModel.swift; sourceTree = "<group>"; };
 		7B97E715C6394C7CAA283F11 /* Pods_IronLogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IronLogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9500AF3C76E40101AB703A /* Pods-IronLogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronLogs.debug.xcconfig"; path = "Target Support Files/Pods-IronLogs/Pods-IronLogs.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1625D7950FC703BD5C9C63 /* Pods-IronLogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IronLogs.release.xcconfig"; path = "Target Support Files/Pods-IronLogs/Pods-IronLogs.release.xcconfig"; sourceTree = "<group>"; };
@@ -438,6 +450,7 @@
 		1F0360EE24720850005A588C /* Meals */ = {
 			isa = PBXGroup;
 			children = (
+				1FBC9E8E24933C1C00E25695 /* SingleRecepieScreen */,
 				1F5B976E2478C05300F3428A /* RecepiesScreen */,
 				1F036102247340D4005A588C /* FoodItemsScreen */,
 				1F0360F824720C75005A588C /* DaysOfEatingScreen */,
@@ -540,6 +553,7 @@
 			children = (
 				1F5B976924788E6F00F3428A /* SpoonacularManager.swift */,
 				1F7172B3247BD19000997523 /* APIFoodItem.swift */,
+				1FBC9E9124933FC000E25695 /* RecepieUrl.swift */,
 			);
 			path = SpoonacularAPI;
 			sourceTree = "<group>";
@@ -573,6 +587,8 @@
 		1F7172BB247BE84E00997523 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FB44ADA248E930B002BE17A /* ViewModel */,
+				1FB44AD5248E8EFB002BE17A /* SearchCell */,
 				1F7172C1247BE89800997523 /* RecepieCell */,
 			);
 			path = View;
@@ -592,6 +608,32 @@
 				1F7172BE247BE89300997523 /* RecepieTableViewCell.xib */,
 			);
 			path = RecepieCell;
+			sourceTree = "<group>";
+		};
+		1FB44AD5248E8EFB002BE17A /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				1FB44AD6248E8F28002BE17A /* SearchTableViewCell.swift */,
+				1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		1FB44ADA248E930B002BE17A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1FBC9E8E24933C1C00E25695 /* SingleRecepieScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1FBC9E8F24933C3F00E25695 /* SingleRecepieViewController.swift */,
+				1FDAC30D2495A1D500BB0393 /* SingleRecepieViewModel.swift */,
+			);
+			path = SingleRecepieScreen;
 			sourceTree = "<group>";
 		};
 		715BC7237A0C9A341BEE67E8 /* Pods */ = {
@@ -671,6 +713,7 @@
 				1F5B97672477AD1100F3428A /* FoodItemTableViewCell.xib in Resources */,
 				1F03609F247165EF005A588C /* Workouts.storyboard in Resources */,
 				1F0360F02472085F005A588C /* Meals.storyboard in Resources */,
+				1FB44AD9248E8F28002BE17A /* SearchTableViewCell.xib in Resources */,
 				1F036080246F9B00005A588C /* GoogleService-Info.plist in Resources */,
 				1F03610D24734640005A588C /* DayOfEatingTitleTableViewCell.xib in Resources */,
 				1F7172C0247BE89300997523 /* RecepieTableViewCell.xib in Resources */,
@@ -763,6 +806,7 @@
 				1F0360DB24716F7F005A588C /* SingleExerciseTableViewModel.swift in Sources */,
 				1F0360A6247167A3005A588C /* Constants.swift in Sources */,
 				1F7172BA247BE6CF00997523 /* RecepieTableViewController.swift in Sources */,
+				1FDAC30E2495A1D500BB0393 /* SingleRecepieViewModel.swift in Sources */,
 				1F5B97662477AD1100F3428A /* FoodItemTableViewCell.swift in Sources */,
 				1F0360ED24720834005A588C /* FoodItem.swift in Sources */,
 				1F0360CA24716D77005A588C /* ExercisesTableViewModel.swift in Sources */,
@@ -772,11 +816,14 @@
 				1F036072246F98AC005A588C /* IronLogs.xcdatamodeld in Sources */,
 				1F03608C246FA88D005A588C /* LoginViewModel.swift in Sources */,
 				1F0360AA247167D0005A588C /* RandomIdGen.swift in Sources */,
+				1FBC9E9224933FC000E25695 /* RecepieUrl.swift in Sources */,
 				1F03610124733FF1005A588C /* DayOfEatingTableViewModel.swift in Sources */,
 				1F0360E124716F7F005A588C /* SuperSetTableViewCell.swift in Sources */,
 				1F0360FE24720CF7005A588C /* DayOfEatingTableViewCell.swift in Sources */,
 				1F036089246FA60A005A588C /* UIEffects.swift in Sources */,
 				1F03610C24734640005A588C /* DayOfEatingTitleTableViewCell.swift in Sources */,
+				1FBC9E9024933C3F00E25695 /* SingleRecepieViewController.swift in Sources */,
+				1FB44AD8248E8F28002BE17A /* SearchTableViewCell.swift in Sources */,
 				1F036099246FBBB9005A588C /* HomeViewController.swift in Sources */,
 				1F0360B4247169E0005A588C /* WorkoutsTableViewModel.swift in Sources */,
 				1F036091246FAA00005A588C /* UserManagment.swift in Sources */,
@@ -787,6 +834,7 @@
 				1F0360DF24716F7F005A588C /* RegularSetTableViewCell.swift in Sources */,
 				1F0360C624716D63005A588C /* SingleExerciseTableViewCell.swift in Sources */,
 				1F03609B246FBF9A005A588C /* SignUpViewModel.swift in Sources */,
+				1FB44ADC248E9327002BE17A /* RecepieTableViewModel.swift in Sources */,
 				1F0360E324720432005A588C /* SetsTableView+Extention.swift in Sources */,
 				1F0360AF247168AE005A588C /* Workout.swift in Sources */,
 				1F0360FC24720CCD005A588C /* DaysOfEatingTableViewController.swift in Sources */,

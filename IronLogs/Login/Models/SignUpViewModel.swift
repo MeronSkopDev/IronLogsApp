@@ -31,6 +31,7 @@ struct SignUpViewModel{
                 if err != nil{
                     self.showError(subtitle: err!.localizedDescription)
                 }else{
+                    FSData.saveUsersNickNameAndUid(uid: res.user.uid, nickName: nickName)
                     self.showSuccsess()
                     Router.shared.chooseScreen(ifLogeedInGoTo: "Home")
                 }

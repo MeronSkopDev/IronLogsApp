@@ -26,6 +26,7 @@ class RecepieTableViewCell: UITableViewCell {
     
     func populateCell(recepie:APIFoodItem){
         one.text = "\(recepie.id)"
+        //Use an API to parse the string into the image
         two.text = recepie.image
         three.text = recepie.protein
         four.text = recepie.title
