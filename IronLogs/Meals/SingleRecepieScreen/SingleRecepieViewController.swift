@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SingleRecepieViewController: UIViewController {
 
@@ -25,23 +26,28 @@ class SingleRecepieViewController: UIViewController {
             }
             self?.url = url
         }
+        
+        loadImage()
     }
     
-    //Find a way to view the image here
+    func loadImage(){
+        guard let recepieImage = recepie?.image else{
+            return
+        }
+        fooImage.sd_setImage(with: URL(string: recepieImage))
+    }
+    
     @IBOutlet weak var fooImage: UIImageView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var protein: UILabel!
-    @IBOutlet weak var carbs: UILabel!
-    @IBOutlet weak var calories: UILabel!
-    @IBOutlet weak var fats: UILabel!
     
-    
-    //Find a way to send the user to the recepie
     @IBAction func goToRecepieWebsite(_ sender: UIButton) {
+        guard let url = url else{
+            return
+        }
+        if let urlCon = URL(string: url){
+            UIApplication.shared.open(urlCon)
+        }
     }
     
-    
-    //MARK: convert the recepie into a foodItem in the viewModel
     @IBAction func addMeal(_ sender: Any) {
         guard let currentDayOfEating = currentDayOfEating else{
             return

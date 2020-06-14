@@ -30,9 +30,8 @@ struct SingleRecepieViewModel{
     
     func stringToNut(toConv:String) -> Int16{
         
-        let clean = toConv.dropLast(1)
-        
-        return Int16(clean.base) ?? 0
+        let clean = toConv.prefix(toConv.count - 1)
+        return Int16(clean) ?? 0
     }
     
     

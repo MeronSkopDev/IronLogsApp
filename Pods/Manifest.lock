@@ -342,6 +342,7 @@ DEPENDENCIES:
   - FirebaseUI/Firestore
   - FirebaseUI/Storage
   - PKHUD (~> 5.0)
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -412,6 +413,6 @@ SPEC CHECKSUMS:
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   SDWebImage: a99471f452bdfa0ca52ddf5b1adf2b61cab1d1eb
 
-PODFILE CHECKSUM: 7ac6a79ff5e30c4ab6f30aeca6461db9c72bebbd
+PODFILE CHECKSUM: 6acae358b7ee675764636d8c839d89461567efbf
 
 COCOAPODS: 1.9.1

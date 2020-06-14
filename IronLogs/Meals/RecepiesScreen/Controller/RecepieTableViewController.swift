@@ -49,7 +49,7 @@ class RecepieTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recepieCell", for: indexPath)  as! RecepieTableViewCell
             
         
-            cell.populateCell(recepie: recepies[indexPath.row])
+            cell.populateCell(recepie: recepies[indexPath.row - 1])
             return cell
         }
         

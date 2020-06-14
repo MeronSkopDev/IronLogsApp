@@ -17,5 +17,6 @@ target 'IronLogs' do
     pod 'Firebase/Database'
     pod 'PKHUD', '~> 5.0'
     pod 'FirebaseUI/Firestore'
+    pod 'SDWebImage', '~> 5.0'
 
 end
