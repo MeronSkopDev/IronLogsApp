@@ -13,8 +13,8 @@ struct SetsViewModel{
         return Workout.Exercise.Set(
             setType: Workout.Exercise.Set.SetType.regularSet,
             weight: 0,
-            reps: 0,
-            rir: nil)
+            reps: 0
+            )
     }
     
     func getNewSuperSet() -> Workout.Exercise.Set{
@@ -22,7 +22,6 @@ struct SetsViewModel{
             setType: Workout.Exercise.Set.SetType.superSet,
             weight: 0,
             reps: 0,
-            rir: nil,
             superReps: 0,
             superWeight: 0,
             superName:"Exercise name")

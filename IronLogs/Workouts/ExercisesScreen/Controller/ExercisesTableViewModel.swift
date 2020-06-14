@@ -31,7 +31,7 @@ struct ExercisesTableViewModel {
         sets: [Workout.Exercise.Set(
             setType: Workout.Exercise.Set.SetType.regularSet ,
             weight: 0,
-            reps: 0,
-            rir: nil)])
+            reps: 0
+            )])
     }
 }

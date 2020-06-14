@@ -46,8 +46,8 @@ class FoodItemsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayOfEatingTitleCell", for: indexPath) as! DayOfEatingTitleTableViewCell
         if currentDayOfEating != nil{
-        cell.populateCell(dayOfEating: currentDayOfEating!)
-        cell.initObserver()
+            cell.populateCell(dayOfEating: currentDayOfEating!)
+            cell.initObserver()
         }
         
         //For the second cell we show the "macrosCell"
@@ -102,7 +102,11 @@ class FoodItemsTableViewController: UITableViewController {
      */
     @IBAction func addFoodItem(_ sender: UIBarButtonItem) {
         mViewModel.addNewFoodItem(dayOfEating: currentDayOfEating)
-        tableView.reloadData()
+        tableView.beginUpdates()
+        tableView.insertRows(at:
+            [(NSIndexPath(row: currentDayOfEating!.foodItemsInside.value.count + 1, section: 0) as IndexPath)],
+                             with: .automatic)
+        tableView.endUpdates()
     }
     
     /**
@@ -115,7 +119,7 @@ class FoodItemsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dest = segue.destination as? RecepieTableViewController else{
-         return
+            return
         }
         guard let currentDayOfEating = sender as? DayOfEating else{
             return

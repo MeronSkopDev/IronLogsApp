@@ -10,7 +10,14 @@ import Foundation
 import FirebaseAuth
 import PKHUD
 
-struct Workout{
+class Workout{
+    
+    init(workoutDetails:WorkoutDetails,
+         exercises:[Workout.Exercise]?){
+        self.workoutDetails = workoutDetails
+        self.exercises = exercises
+    }
+    
     var workoutDetails:WorkoutDetails
     
     struct WorkoutDetails{
@@ -22,7 +29,13 @@ struct Workout{
     
     var exercises:[Exercise]?
     
-    struct Exercise{
+    class Exercise{
+        
+        init(exerciseName:String?,sets:[Set]?){
+            self.exerciseName = exerciseName
+            self.sets = sets
+        }
+        
         var exerciseName:String?
         var sets:[Set]?
         
@@ -57,7 +70,23 @@ struct Workout{
         
         
         //MARK: Add special sets fields
-        struct Set{
+        class Set{
+            
+            init(setType:SetType,weight:Int, reps:Int){
+                self.setType = setType
+                self.weight = weight
+                self.reps = reps
+            }
+            
+            init(setType:SetType,weight:Int, reps:Int, superReps:Int, superWeight:Int, superName:String){
+                self.setType = setType
+                self.weight = weight
+                self.reps = reps
+                self.superName = superName
+                self.superReps = superReps
+                self.superWeight = superWeight
+            }
+            
             let setType:SetType
             var weight:Int
             var reps:Int
@@ -168,6 +197,7 @@ class WorkoutsInUse:ShowHud{
             workoutsInUse.workouts.value = workouts
         }
     }
+    
     
     //MARK: Make shortcuts to Exercises and sets so you dont need to write the whole thing
 }

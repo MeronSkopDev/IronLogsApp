@@ -121,6 +121,11 @@ class ExercisesTableViewController: UITableViewController {
             return
         }
         WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises!.append(mViewModel.getNewExercise())
+        tableView.beginUpdates()
+        tableView.insertRows(at:
+            [(NSIndexPath(row: WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises!.count - 1 ,
+                          section: 0) as IndexPath)], with: .automatic)
+        tableView.endUpdates()
     }
     
     

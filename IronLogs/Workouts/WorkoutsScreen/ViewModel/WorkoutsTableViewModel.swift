@@ -25,7 +25,7 @@ struct WorkoutsTableViewModel{
             exercises: [Workout.Exercise(exerciseName: "Exercise Name",
                                          sets: [Workout.Exercise.Set(
                                             setType: Workout.Exercise.Set.SetType.regularSet,
-                                            weight: 0, reps: 0, rir: 0)])])
+                                            weight: 0, reps: 0)])])
         return workoutToReturn
     }
     
