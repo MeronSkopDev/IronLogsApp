@@ -14,7 +14,6 @@ class SetsTableViewController: UITableViewController {
     var workoutsIndex:Int?
     let mViewModel = SetsViewModel()
     
-    let updateExerciseTitleBool = Box(Bool(false))
     var isCurrentlyDeleating = false
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -53,31 +52,16 @@ class SetsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseNameNib", for: indexPath) as! ExerciseNameTableViewCell
         cell.initTextObserver()
-        cell.delegateGetText = self
-        
         
         if let workoutsIndex = workoutsIndex {
             
             
             if let exercisesIndex = exercisesIndex{
                 
-                updateExerciseTitleBool.bind {[weak self] (saveBool) in
-                    if saveBool{
-                        WorkoutsInUse.shared()
-                            .workouts.value[workoutsIndex]
-                            .exercises?[exercisesIndex]
-                            .exerciseName = cell.getExerciseName()
-                        self?.updateExerciseTitleBool.value = false
-                    }
-                }
                 
                 
-                if let exerciseName = WorkoutsInUse.shared()
-                    .workouts.value[workoutsIndex]
-                    .exercises?[exercisesIndex]
-                    .exerciseName {
-                    cell.initCell(exerciseName: exerciseName)
-                }
+                
+                cell.initCell(currentExercise: WorkoutsInUse.shared().workouts.value[workoutsIndex].exercises![exercisesIndex])
                 
                 if let sets = WorkoutsInUse.shared().workouts.value[workoutsIndex].exercises?[exercisesIndex].sets{
                     ///If the row is grater then one we show sets
@@ -89,23 +73,19 @@ class SetsTableViewController: UITableViewController {
                         switch setType {
                         case Workout.Exercise.Set.SetType.regularSet:
                             let cell = tableView.dequeueReusableCell(withIdentifier: "regularSetNib", for: indexPath) as! RegularSetTableViewCell
-                            cell.getIndex(setIndex:indexPath.row - 1)
-                            cell.initCell(set: currentSet)
+                            cell.initCell(currentSet: currentSet)
                             cell.initTextObserver()
-                            cell.delegateGetWeightAndReps = self
                             return cell
                             
                         case Workout.Exercise.Set.SetType.superSet:
                             let cell = tableView.dequeueReusableCell(withIdentifier: "superSetNib", for: indexPath) as! SuperSetTableViewCell
-                            cell.getIndex(currentSetIndex: indexPath.row - 1)
                             cell.initCell(
                                 currentExerciseName: WorkoutsInUse.shared()
                                     .workouts.value[workoutsIndex]
                                     .exercises?[exercisesIndex]
                                     .exerciseName ?? " ",
-                                set: currentSet)
+                                currentSet: currentSet)
                             cell.initDelegate()
-                            cell.delegate = self
                             return cell
                         default:
                             break
@@ -148,7 +128,6 @@ class SetsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
             isCurrentlyDeleating = false
-            //MARK: Find a way to fix the bug where the app crashes when you try to delete a cell in index n+x (x>=1) while deleteing cell in index n
         }
     }
     
@@ -158,7 +137,7 @@ class SetsTableViewController: UITableViewController {
      */
     @IBAction func updateSetsTapped(_ sender: UIBarButtonItem) {
         tableView.reloadData()
-        updateExerciseTitleBool.value = true
+        
         saveButton.isEnabled = false
         guard let workoutsIndex = workoutsIndex else{
             return
@@ -185,9 +164,7 @@ class SetsTableViewController: UITableViewController {
      Adds a new set to "WorkoutsInUse.shared()" in the exercise the user is currently looking at
      */
     @IBAction func addSetTapped(_ sender: Any) {
-        updateExerciseTitleBool.value = true
         createAndShowSetChoiceSheet()
-        
     }
     
     /**

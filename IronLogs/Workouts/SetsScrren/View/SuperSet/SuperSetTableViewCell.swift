@@ -23,66 +23,54 @@ class SuperSetTableViewCell: UITableViewCell {
     
     @IBOutlet weak var superExerciseNameEditText: UITextField!
     
-    var cellSetIndex:Int?
+    var currentSet:Workout.Exercise.Set?
     
-    func initCell(currentExerciseName:String,set:Workout.Exercise.Set){
+    func initCell(currentExerciseName:String,currentSet:Workout.Exercise.Set){
+        self.currentSet = currentSet
         currentExerciseLabel.text = currentExerciseName
-        currentExerciseRepsEditText.text = "\(set.reps)"
-        currentExerciseWeightEditText.text = "\(set.weight)"
-        superExerciseNameEditText.text = set.superName
-        superExerciseRepsEditText.text = "\(set.superReps ?? 0)"
-        superExerciseWeightEditText.text = "\(set.superWeight ?? 0)"
-    }
-    func getIndex(currentSetIndex:Int){
-        cellSetIndex = currentSetIndex
+        currentExerciseRepsEditText.text = "\(currentSet.reps)"
+        currentExerciseWeightEditText.text = "\(currentSet.weight)"
+        superExerciseNameEditText.text = currentSet.superName
+        superExerciseRepsEditText.text = "\(currentSet.superReps ?? 0)"
+        superExerciseWeightEditText.text = "\(currentSet.superWeight ?? 0)"
     }
     
     var delegate:SuperSetDelegate?
     
     func initDelegate(){
-        currentExerciseRepsEditText.addTarget(self, action: #selector(observeRepsChange(_:)), for: .editingDidEnd)
-        currentExerciseWeightEditText.addTarget(self, action: #selector(observeWeightChange(_:)), for: .editingDidEnd)
-        superExerciseWeightEditText.addTarget(self, action: #selector(observeSuperWeightChange(_:)), for: .editingDidEnd)
-        superExerciseRepsEditText.addTarget(self, action: #selector(observeSuperRepsChange(_:)), for: .editingDidEnd)
-        superExerciseNameEditText.addTarget(self, action: #selector(observeSuperNameChange(_:)), for: .editingDidEnd)
+        currentExerciseRepsEditText.addTarget(self, action: #selector(observeRepsChange(_:)), for: .editingChanged)
+        currentExerciseWeightEditText.addTarget(self, action: #selector(observeWeightChange(_:)), for: .editingChanged)
+        superExerciseWeightEditText.addTarget(self, action: #selector(observeSuperWeightChange(_:)), for: .editingChanged)
+        superExerciseRepsEditText.addTarget(self, action: #selector(observeSuperRepsChange(_:)), for: .editingChanged)
+        superExerciseNameEditText.addTarget(self, action: #selector(observeSuperNameChange(_:)), for: .editingChanged)
     }
     
     @objc func observeWeightChange(_ titleLabel:UITextField){
         if let weight =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegate?.getCurrentWeightOnChange(weight:Int(weight) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+            currentSet?.weight = Int(weight) ?? 0
         }
     }
     
     @objc func observeSuperWeightChange(_ titleLabel:UITextField){
-        if let weight =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegate?.getSuperWeightOnChange(weight:Int(weight) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+        if let superWeight =  titleLabel.text {
+            currentSet?.superWeight = Int(superWeight) ?? 0
         }
     }
     
     @objc func observeRepsChange(_ titleLabel:UITextField){
         if let reps =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegate?.getCurrentRepsOnChange(reps:Int(reps) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+            currentSet?.reps = Int(reps) ?? 0
         }
     }
     
     @objc func observeSuperRepsChange(_ titleLabel:UITextField){
-        if let reps =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegate?.getSuperRepsOnChange(reps:Int(reps) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+        if let superReps =  titleLabel.text {
+            currentSet?.superReps = Int(superReps) ?? 0
         }
     }
     
     @objc func observeSuperNameChange(_ titleLabel:UITextField){
-        if cellSetIndex != nil{
-            delegate?.getSuperNameOnChange(text: titleLabel.text ?? " ", currentSetIndex: cellSetIndex!)
-        }
+        currentSet?.superName = titleLabel.text ?? " "
     }
     
 }

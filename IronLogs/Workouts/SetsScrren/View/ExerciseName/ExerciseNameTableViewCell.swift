@@ -13,17 +13,16 @@ class ExerciseNameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var exerciseNameEditText: UITextField!
     
+    var currentExercise:Workout.Exercise?
     
     /**
     This method
     Inserts given exerciseName into exerciseName
     */
-    func initCell(exerciseName:String){
-        exerciseNameEditText.text = exerciseName
+    func initCell(currentExercise:Workout.Exercise){
+        exerciseNameEditText.text = currentExercise.exerciseName
+        self.currentExercise = currentExercise
     }
-    
-    
-    var delegateGetText:editTextObserversDelegate?
     
     /**
      This method
@@ -31,14 +30,7 @@ class ExerciseNameTableViewCell: UITableViewCell {
      The target method notices changes in the text
      */
     func initTextObserver(){
-        exerciseNameEditText.addTarget(self, action: #selector(observeExerciseNameChange(_:)), for: .editingDidEnd)
-    }
-    
-    func getExerciseName() -> String{
-        if let text = exerciseNameEditText.text{
-            return text
-        }
-        return " "
+        exerciseNameEditText.addTarget(self, action: #selector(observeExerciseNameChange(_:)), for: .editingChanged)
     }
     
     /**
@@ -46,6 +38,6 @@ class ExerciseNameTableViewCell: UITableViewCell {
      Gives the text of exerciseNameEditText and sends it to delegateGetText
      */
     @objc func observeExerciseNameChange(_ titleLabel:UITextField){
-        delegateGetText?.getTextOnChange(text: titleLabel.text ?? " ")
+        currentExercise?.exerciseName = titleLabel.text ?? " "
     }
 }

@@ -12,14 +12,15 @@ class WorkoutTitleTableViewCell: UITableViewCell {
     
     @IBOutlet weak var workoutTitleEditText: UITextField!
     
-    var delegateGetText:editTextObserversDelegate?
+    var currentWorkout:Workout?
     
     /**
     This method
     Inserts given workoutTitle into workoutTitleEditText
     */
-    func initCell(workoutTitle:String){
-        workoutTitleEditText.text = workoutTitle
+    func initCell(currentWorkout:Workout){
+        workoutTitleEditText.text = currentWorkout.workoutDetails.title
+        self.currentWorkout = currentWorkout
     }
     
     /**
@@ -28,22 +29,16 @@ class WorkoutTitleTableViewCell: UITableViewCell {
     The target method notices changes in the text
     */
     func initTextObserver(){
-        workoutTitleEditText.addTarget(self, action: #selector(observeTitleChange(_:)), for: .editingDidEnd)
+        workoutTitleEditText.addTarget(self, action: #selector(observeTitleChange(_:)), for: .editingChanged)
     }
     
-    func getWorkoutTitle() -> String{
-        if let text = workoutTitleEditText.text{
-            return text
-        }
-        return " "
-    }
     
     /**
     This method (@objc)
     Gives the text of exerciseNameEditText and sends it to delegateGetText
     */
     @objc func observeTitleChange(_ titleLabel:UITextField){
-        delegateGetText?.getTextOnChange(text: titleLabel.text ?? " ")
+        currentWorkout?.workoutDetails.title = titleLabel.text ?? ""
     }
     
 }

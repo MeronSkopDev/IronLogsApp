@@ -16,54 +16,48 @@ class RegularSetTableViewCell: UITableViewCell {
     
     var cellSetIndex:Int?
     
+    var currentSet:Workout.Exercise.Set?
+    
     /**
      This method
      Inserts given reps and weights into weightEditText and repsEditText respectivly
      Recives the index of the set in the Workout.Exercise.Set that this cell corresponds with
      */
-    func initCell(set:Workout.Exercise.Set){
-        weightEditText.text = "\(set.weight)"
-        repsEditText.text = "\(set.reps)"
+    func initCell(currentSet:Workout.Exercise.Set){
+        self.currentSet = currentSet
+        weightEditText.text = "\(currentSet.weight)"
+        repsEditText.text = "\(currentSet.reps)"
     }
-    func getIndex(setIndex:Int){
-        cellSetIndex = setIndex
-    }
-    
-    var delegateGetWeightAndReps:WeightAndRepsObservationDelegate?
     
     /**
-    This method
-    Adds a target method to weightEditText and repsEditText
-    The target method notices changes in the text
-    */
+     This method
+     Adds a target method to weightEditText and repsEditText
+     The target method notices changes in the text
+     */
     func initTextObserver(){
-        weightEditText.addTarget(self, action: #selector(observeWeightChange(_:)), for: .editingDidEnd)
-        repsEditText.addTarget(self, action: #selector(observeRepsChange(_:)), for: .editingDidEnd)
+        weightEditText.addTarget(self, action: #selector(observeWeightChange(_:)), for: .editingChanged)
+        repsEditText.addTarget(self, action: #selector(observeRepsChange(_:)), for: .editingChanged)
     }
     
     /**
-    This method (@objc)
-    Gives the text of exerciseNameEditText and sends it to delegateGetWeightAndReps
-    Sends back to "SingleExerciseTableViewController"
-    */
+     This method (@objc)
+     Gives the text of exerciseNameEditText and sends it to delegateGetWeightAndReps
+     Sends back to "SingleExerciseTableViewController"
+     */
     @objc func observeWeightChange(_ titleLabel:UITextField){
         if let weight =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegateGetWeightAndReps?.getWeightOnChange(weight:Int(weight) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+            currentSet?.weight = Int(weight) ?? 0
         }
     }
     
     /**
-    This method (@objc)
-    Gives the text of exerciseNameEditText and sends it to delegateGetWeightAndReps
-    Sends back to "SingleExerciseTableViewController"
-    */
+     This method (@objc)
+     Gives the text of exerciseNameEditText and sends it to delegateGetWeightAndReps
+     Sends back to "SingleExerciseTableViewController"
+     */
     @objc func observeRepsChange(_ titleLabel:UITextField){
         if let reps =  titleLabel.text {
-            if cellSetIndex != nil{
-                delegateGetWeightAndReps?.getRepsOnChange(reps:Int(reps) ?? 0, currentSetIndex: cellSetIndex!)
-            }
+            currentSet?.reps = Int(reps) ?? 0
         }
     }
     

@@ -199,6 +199,13 @@ class WorkoutsInUse:ShowHud{
     }
     
     
-    //MARK: Make shortcuts to Exercises and sets so you dont need to write the whole thing
+    func getExercises(workoutsIndex:Int) -> [Workout.Exercise]?{
+        return workouts.value[workoutsIndex].exercises
+    }
+    
+    func getSets(workoutsIndex:Int, exercisesIndex:Int) -> [Workout.Exercise.Set]? {
+        return workouts.value[workoutsIndex].exercises?[exercisesIndex].sets
+    }
+    
 }
 

@@ -48,7 +48,6 @@
 		1F0360DF24716F7F005A588C /* RegularSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0360D624716F7F005A588C /* RegularSetTableViewCell.swift */; };
 		1F0360E024716F7F005A588C /* SuperSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F0360D824716F7F005A588C /* SuperSetTableViewCell.xib */; };
 		1F0360E124716F7F005A588C /* SuperSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0360D924716F7F005A588C /* SuperSetTableViewCell.swift */; };
-		1F0360E324720432005A588C /* SetsTableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0360E224720432005A588C /* SetsTableView+Extention.swift */; };
 		1F0360EB247207D6005A588C /* DayOfEating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0360EA247207D6005A588C /* DayOfEating.swift */; };
 		1F0360ED24720834005A588C /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0360EC24720834005A588C /* FoodItem.swift */; };
 		1F0360F02472085F005A588C /* Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0360EF2472085F005A588C /* Meals.storyboard */; };
@@ -122,7 +121,6 @@
 		1F0360D624716F7F005A588C /* RegularSetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularSetTableViewCell.swift; sourceTree = "<group>"; };
 		1F0360D824716F7F005A588C /* SuperSetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuperSetTableViewCell.xib; sourceTree = "<group>"; };
 		1F0360D924716F7F005A588C /* SuperSetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperSetTableViewCell.swift; sourceTree = "<group>"; };
-		1F0360E224720432005A588C /* SetsTableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetsTableView+Extention.swift"; sourceTree = "<group>"; };
 		1F0360EA247207D6005A588C /* DayOfEating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfEating.swift; sourceTree = "<group>"; };
 		1F0360EC24720834005A588C /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		1F0360EF2472085F005A588C /* Meals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meals.storyboard; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 			children = (
 				1F0360CE24716F7F005A588C /* SetsTableViewController.swift */,
 				1F0360CF24716F7F005A588C /* SingleExerciseTableViewModel.swift */,
-				1F0360E224720432005A588C /* SetsTableView+Extention.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -835,7 +832,6 @@
 				1F0360C624716D63005A588C /* SingleExerciseTableViewCell.swift in Sources */,
 				1F03609B246FBF9A005A588C /* SignUpViewModel.swift in Sources */,
 				1FB44ADC248E9327002BE17A /* RecepieTableViewModel.swift in Sources */,
-				1F0360E324720432005A588C /* SetsTableView+Extention.swift in Sources */,
 				1F0360AF247168AE005A588C /* Workout.swift in Sources */,
 				1F0360FC24720CCD005A588C /* DaysOfEatingTableViewController.swift in Sources */,
 				1F03611024734ABD005A588C /* MacrosTableViewCell.swift in Sources */,

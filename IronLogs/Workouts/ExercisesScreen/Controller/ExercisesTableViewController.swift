@@ -13,12 +13,8 @@ class ExercisesTableViewController: UITableViewController {
     var workoutIndex:Int?
     let mViewModel = ExercisesTableViewModel()
     
-    let updateTitleBool = Box(Bool(false))
-    
     override func viewDidAppear(_ animated: Bool) {
-        WorkoutsInUse.shared().workouts.bind {[weak self] (workouts) -> Void in
-            self?.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -50,24 +46,16 @@ class ExercisesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "workoutTitleNib", for: indexPath) as! WorkoutTitleTableViewCell
         cell.initTextObserver()
-        cell.delegateGetText = self
         
         guard let exercisesIndex = workoutIndex else{
             return cell
-        }
-        
-        updateTitleBool.bind {[weak self] (saveBool) in
-            if saveBool{
-            WorkoutsInUse.shared().workouts.value[exercisesIndex].workoutDetails.title = cell.getWorkoutTitle()
-            self?.updateTitleBool.value = false
-            }
         }
         
         guard let currentExercises = WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises else{
             return cell
         }
         
-        cell.initCell(workoutTitle:WorkoutsInUse.shared().workouts.value[exercisesIndex].workoutDetails.title)
+        cell.initCell(currentWorkout:WorkoutsInUse.shared().workouts.value[exercisesIndex])
         
         if indexPath.row >= 1 {
             let currentExercise = currentExercises[indexPath.row - 1]
@@ -116,22 +104,19 @@ class ExercisesTableViewController: UITableViewController {
     }
     
     @IBAction func addExerciseButonTapped(_ sender: Any) {
-        updateTitleBool.value = true
         guard let exercisesIndex = workoutIndex else{
             return
         }
         WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises!.append(mViewModel.getNewExercise())
         tableView.beginUpdates()
         tableView.insertRows(at:
-            [(NSIndexPath(row: WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises!.count - 1 ,
+            [(NSIndexPath(row: WorkoutsInUse.shared().workouts.value[exercisesIndex].exercises!.count ,
                           section: 0) as IndexPath)], with: .automatic)
         tableView.endUpdates()
     }
     
     
     @IBAction func updateExercisesButtonTapped(_ sender: Any) {
-        updateTitleBool.value = true
-        //MARK: Make an animation that replaces the pencil while its trying to save
         guard let exercisesIndex = workoutIndex else{
             return
         }
@@ -145,20 +130,9 @@ class ExercisesTableViewController: UITableViewController {
             title: details.title,
             exercises: currentExercises,
             collectDoneBool: {(done) in
-                //Stop loading the pencil button
         })
     }
     
 }
-
-extension ExercisesTableViewController: editTextObserversDelegate{
-    func getTextOnChange(text: String) {
-        if workoutIndex != nil{
-            WorkoutsInUse.shared().workouts.value[workoutIndex!].workoutDetails.title = text
-        }
-    }
-    
-}
-
 
 
