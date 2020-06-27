@@ -6,6 +6,8 @@
 //  Copyright © 2020 Skop.inc. All rights reserved.
 //
 
+//MARK: Add a cell to give the exercise a description
+
 import UIKit
 
 class SetsTableViewController: UITableViewController {

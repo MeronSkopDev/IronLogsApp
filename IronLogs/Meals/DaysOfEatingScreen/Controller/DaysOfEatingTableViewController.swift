@@ -17,6 +17,8 @@ class DaysOfEatingTableViewController: UITableViewController {
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         
+        //MARK: Add a predicate and a uuid to the "DayOfEating" object
+        
         request.sortDescriptors = [
             NSSortDescriptor(key: "dateOfCreation", ascending: true)
         ]
