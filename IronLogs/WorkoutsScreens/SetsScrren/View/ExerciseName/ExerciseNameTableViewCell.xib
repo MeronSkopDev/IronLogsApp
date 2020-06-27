@@ -17,17 +17,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-rC-Mie">
-                        <rect key="frame" x="8" y="0.0" width="443" height="142"/>
+                        <rect key="frame" x="8" y="8" width="443" height="126"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-barbell-2" translatesAutoresizingMaskIntoConstraints="NO" id="WLA-m2-xIu">
-                                <rect key="frame" x="0.0" y="41" width="60" height="60"/>
+                                <rect key="frame" x="0.0" y="33" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="kNk-Lc-aRK"/>
                                     <constraint firstAttribute="height" constant="60" id="oqh-u8-JdI"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-l9-tPX">
-                                <rect key="frame" x="60" y="41" width="323" height="60"/>
+                                <rect key="frame" x="60" y="33" width="323" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Exercise Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-Zi-zPK">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="56"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-barbell-2" translatesAutoresizingMaskIntoConstraints="NO" id="AlX-YU-mFB">
-                                <rect key="frame" x="383" y="41" width="60" height="60"/>
+                                <rect key="frame" x="383" y="33" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="jTk-do-1V1"/>
                                     <constraint firstAttribute="height" constant="60" id="xUX-Vo-6lg"/>
@@ -58,9 +58,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="dT3-rC-Mie" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="I41-w4-3Ej"/>
-                    <constraint firstAttribute="bottom" secondItem="dT3-rC-Mie" secondAttribute="bottom" id="Qxv-f4-hee"/>
-                    <constraint firstAttribute="bottom" secondItem="dT3-rC-Mie" secondAttribute="bottom" id="bcc-gU-W3P"/>
-                    <constraint firstItem="dT3-rC-Mie" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vzb-c2-DVf"/>
+                    <constraint firstAttribute="bottom" secondItem="dT3-rC-Mie" secondAttribute="bottom" constant="8" id="Rvu-gE-zoP"/>
+                    <constraint firstItem="dT3-rC-Mie" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SAh-k1-lcz"/>
                     <constraint firstAttribute="trailing" secondItem="dT3-rC-Mie" secondAttribute="trailing" constant="8" id="yW5-qe-16q"/>
                 </constraints>
             </tableViewCellContentView>

@@ -13,13 +13,14 @@ struct DayOfEatingTableViewModel {
      This method
      Adds a new "DayOfEating' to the database
      */
-    func createNewDayOfEating(){
+    func createNewDayOfEating(currentUserUUID:String){
         let _ = DayOfEating(title: "New day",
         calories: 0,
         carbs: 0,
         fats: 0,
         protein: 0,
-        dateOfCreation: Date())
+        dateOfCreation: Date(),
+        uuid: currentUserUUID)
         CM.shared.saveContext()
     }
 }

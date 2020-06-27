@@ -9,6 +9,7 @@
 import UIKit
 
 import CoreData
+import FirebaseAuth
 
 class DaysOfEatingTableViewController: UITableViewController {
     
@@ -17,10 +18,13 @@ class DaysOfEatingTableViewController: UITableViewController {
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         
-        //MARK: Add a predicate and a uuid to the "DayOfEating" object
+        ///This predicate makes sure that each user only sees his own DaysOfEating
+        let arg = (Auth.auth().currentUser?.uid ?? "")
+        request.predicate = NSPredicate(format: "uuid == %@", arg)
         
         request.sortDescriptors = [
             NSSortDescriptor(key: "dateOfCreation", ascending: true)
+            
         ]
         
         let context = CM.shared.context
@@ -103,7 +107,8 @@ class DaysOfEatingTableViewController: UITableViewController {
      Adds a new "DayOfEating" to the database
      */
     @IBAction func addDayOfEating(_ sender: UIBarButtonItem) {
-        mViewModel.createNewDayOfEating()
+        mViewModel.createNewDayOfEating(currentUserUUID:Auth.auth().currentUser?.uid ?? "")
+        print(fetch.fetchedObjects)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

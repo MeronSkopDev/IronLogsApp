@@ -14,7 +14,7 @@ extension DayOfEating{
     This init
     A conviniance init made to have a simple and easy way to create a new "DayOfEating"
     */
-    convenience init(title:String,calories:Int16,carbs:Int16,fats:Int16,protein:Int16,dateOfCreation:Date) {
+    convenience init(title:String,calories:Int16,carbs:Int16,fats:Int16,protein:Int16,dateOfCreation:Date,uuid:String) {
         self.init(context: CM.shared.context)
         
         self.overallCalories = calories
@@ -23,6 +23,7 @@ extension DayOfEating{
         self.overallFats = fats
         self.overallProtein = protein
         self.title = title
+        self.uuid = uuid
     }
     
     /**
