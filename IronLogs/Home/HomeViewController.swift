@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
     
+    @IBOutlet weak var rightArmImage: UIImageView!
+    
+    @IBOutlet weak var leftArmImage: UIImageView!
+    
     override func viewDidAppear(_ animated: Bool) {
         assignUserNameToLabel()
         
@@ -54,6 +58,8 @@ class HomeViewController: UIViewController {
     func assignUserNameToLabel(){
         FSData.getUserNickName(uid: Auth.auth().currentUser?.uid ?? "") { (nickName) in
             self.userNameLabel.text = nickName
+            self.rightArmImage.alpha = 1
+            self.leftArmImage.alpha = 1
         }
         
     }
@@ -65,6 +71,7 @@ class HomeViewController: UIViewController {
         if sender.state == .ended{
             switch sender.direction {
             case .right:
+                
                 let mealsStoryboard = UIStoryboard(name: "Meals", bundle: .main)
                 Router.shared.window?.rootViewController = mealsStoryboard.instantiateInitialViewController()
                 break;

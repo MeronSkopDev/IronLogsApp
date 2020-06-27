@@ -21,17 +21,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfh-J6-y0H">
-                                <rect key="frame" x="207" y="147" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V8k-f7-bN3">
                                 <rect key="frame" x="258" y="398" width="140" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-triceps-2" translatesAutoresizingMaskIntoConstraints="NO" id="itD-x8-5dN">
-                                        <rect key="frame" x="0.0" y="2" width="100" height="96"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-barbell-2" translatesAutoresizingMaskIntoConstraints="NO" id="itD-x8-5dN">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b8Y-3L-RQK">
@@ -58,7 +52,7 @@
                                             <constraint firstAttribute="width" constant="40" id="nzQ-3f-w8X"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="f7f-64-Wge">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-cheeseburger" translatesAutoresizingMaskIntoConstraints="NO" id="f7f-64-Wge">
                                         <rect key="frame" x="40" y="0.0" width="100" height="100"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -68,18 +62,47 @@
                                     <constraint firstAttribute="height" constant="100" id="ewd-4y-oWR"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Lgh-0e-78A">
+                                <rect key="frame" x="127" y="147" width="160" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-triceps-2" translatesAutoresizingMaskIntoConstraints="NO" id="Fwi-M4-m3v">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="b2L-aQ-HFz"/>
+                                            <constraint firstAttribute="width" constant="50" id="ofe-pD-ENB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfh-J6-y0H">
+                                        <rect key="frame" x="50" y="10" width="60" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8je-3r-aGy"/>
+                                            <constraint firstAttribute="width" constant="60" id="ToG-oM-6GR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-triceps-3" translatesAutoresizingMaskIntoConstraints="NO" id="JSA-2n-x3V">
+                                        <rect key="frame" x="110" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="arR-9a-29k"/>
+                                            <constraint firstAttribute="width" constant="50" id="tN5-wv-tU1"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="maD-OF-E6R" firstAttribute="trailing" secondItem="kJi-5j-jvk" secondAttribute="trailing" constant="8" id="2TA-3l-jVs"/>
                             <constraint firstItem="V8k-f7-bN3" firstAttribute="centerY" secondItem="HZX-Sd-EZ3" secondAttribute="centerY" id="7Ij-ZM-A0H"/>
-                            <constraint firstItem="Lfh-J6-y0H" firstAttribute="centerX" secondItem="HZX-Sd-EZ3" secondAttribute="centerX" id="8tJ-7L-Fg5"/>
                             <constraint firstItem="kJi-5j-jvk" firstAttribute="leading" secondItem="maD-OF-E6R" secondAttribute="leading" constant="8" id="CCo-Xk-rgw"/>
-                            <constraint firstItem="Lfh-J6-y0H" firstAttribute="top" secondItem="kJi-5j-jvk" secondAttribute="bottom" constant="8" id="bgb-sy-i5S"/>
                             <constraint firstItem="kJi-5j-jvk" firstAttribute="top" secondItem="maD-OF-E6R" secondAttribute="top" constant="16" id="c8z-np-EC4"/>
+                            <constraint firstItem="Lgh-0e-78A" firstAttribute="top" secondItem="kJi-5j-jvk" secondAttribute="bottom" constant="8" id="dm3-cr-CGz"/>
                             <constraint firstItem="UWI-MA-W21" firstAttribute="centerY" secondItem="HZX-Sd-EZ3" secondAttribute="centerY" id="fID-fk-cjz"/>
                             <constraint firstItem="maD-OF-E6R" firstAttribute="trailing" secondItem="V8k-f7-bN3" secondAttribute="trailing" constant="16" id="oba-dr-Q5S"/>
                             <constraint firstItem="UWI-MA-W21" firstAttribute="leading" secondItem="maD-OF-E6R" secondAttribute="leading" constant="16" id="p5h-vY-vBa"/>
+                            <constraint firstItem="Lgh-0e-78A" firstAttribute="centerX" secondItem="HZX-Sd-EZ3" secondAttribute="centerX" id="uo4-Uj-QtH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="maD-OF-E6R"/>
                     </view>
@@ -91,6 +114,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="leftArmImage" destination="Fwi-M4-m3v" id="Xsb-67-d6B"/>
+                        <outlet property="rightArmImage" destination="JSA-2n-x3V" id="Z6l-hr-QSB"/>
                         <outlet property="userNameLabel" destination="Lfh-J6-y0H" id="l5n-JD-V5f"/>
                     </connections>
                 </viewController>
@@ -120,7 +145,9 @@
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
-        <image name="icons8-hamburger" width="96" height="96"/>
+        <image name="icons8-barbell-2" width="100" height="100"/>
+        <image name="icons8-cheeseburger" width="100" height="100"/>
         <image name="icons8-triceps-2" width="96" height="96"/>
+        <image name="icons8-triceps-3" width="96" height="96"/>
     </resources>
 </document>

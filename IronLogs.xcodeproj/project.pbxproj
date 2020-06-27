@@ -193,9 +193,9 @@
 		1F036066246F98AC005A588C /* IronLogs */ = {
 			isa = PBXGroup;
 			children = (
-				1F0360EE24720850005A588C /* Meals */,
+				1F0360EE24720850005A588C /* MealsScreens */,
 				1F0360E4247206A6005A588C /* Model */,
-				1F03609C247165CB005A588C /* Workouts */,
+				1F03609C247165CB005A588C /* WorkoutsScreens */,
 				1F036081246F9B24005A588C /* Utillity */,
 				1F03607E246F98C3005A588C /* Login */,
 				1F036095246FB857005A588C /* Home */,
@@ -289,7 +289,7 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		1F03609C247165CB005A588C /* Workouts */ = {
+		1F03609C247165CB005A588C /* WorkoutsScreens */ = {
 			isa = PBXGroup;
 			children = (
 				1F0360CC24716F6B005A588C /* SetsScrren */,
@@ -297,7 +297,7 @@
 				1F03609D247165D2005A588C /* WorkoutsScreen */,
 				1F03609E247165EF005A588C /* Workouts.storyboard */,
 			);
-			path = Workouts;
+			path = WorkoutsScreens;
 			sourceTree = "<group>";
 		};
 		1F03609D247165D2005A588C /* WorkoutsScreen */ = {
@@ -444,7 +444,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1F0360EE24720850005A588C /* Meals */ = {
+		1F0360EE24720850005A588C /* MealsScreens */ = {
 			isa = PBXGroup;
 			children = (
 				1FBC9E8E24933C1C00E25695 /* SingleRecepieScreen */,
@@ -453,7 +453,7 @@
 				1F0360F824720C75005A588C /* DaysOfEatingScreen */,
 				1F0360EF2472085F005A588C /* Meals.storyboard */,
 			);
-			path = Meals;
+			path = MealsScreens;
 			sourceTree = "<group>";
 		};
 		1F0360F824720C75005A588C /* DaysOfEatingScreen */ = {
