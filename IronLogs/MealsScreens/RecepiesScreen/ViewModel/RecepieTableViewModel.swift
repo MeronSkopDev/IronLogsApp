@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct RecepieTableViewModel{
+struct RecepieTableViewModel:ShowHud{
     
     func getRecepies(querys:[String:String], callBack:@escaping ([APIFoodItem]?) -> Void){
         SpoonacularDataSource.getRecepies(searchParams: querys) { (foodItems, err) in
             if err != nil{
-                
+                self.showError(title: "Couldent get recepies")
             } else{
                 callBack(foodItems)
             }

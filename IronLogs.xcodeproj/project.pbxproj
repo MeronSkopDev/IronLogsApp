@@ -584,7 +584,6 @@
 		1F7172BB247BE84E00997523 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1FB44ADA248E930B002BE17A /* ViewModel */,
 				1FB44AD5248E8EFB002BE17A /* SearchCell */,
 				1F7172C1247BE89800997523 /* RecepieCell */,
 			);
@@ -594,6 +593,7 @@
 		1F7172BC247BE85E00997523 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -614,14 +614,6 @@
 				1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */,
 			);
 			path = SearchCell;
-			sourceTree = "<group>";
-		};
-		1FB44ADA248E930B002BE17A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1FBC9E8E24933C1C00E25695 /* SingleRecepieScreen */ = {

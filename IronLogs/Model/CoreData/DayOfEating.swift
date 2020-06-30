@@ -52,7 +52,7 @@ extension DayOfEating{
         return calories
     }
     /**
-    This method
+    This calculated value
     Keeps track of the sum of all the "protein" of all the "FoodItem" inside the "DayOfEating"
     */
     var calculatedOverallProtein:Int16{
@@ -64,7 +64,7 @@ extension DayOfEating{
         return protein
     }
     /**
-    This method
+    This calculated value
     Keeps track of the sum of all the "carbs" of all the "FoodItem" inside the "DayOfEating"
     */
     var calculatedOverallCarbs:Int16{
@@ -76,7 +76,7 @@ extension DayOfEating{
         return carbs
     }
     /**
-    This method
+    This calculated value
     Keeps track of the sum of all the "fats" of all the "FoodItem" inside the "DayOfEating"
     */
     var calculatedOverallFats:Int16{
@@ -86,5 +86,13 @@ extension DayOfEating{
         }
         overallFats = fats
         return fats
+    }
+    
+    /**
+     This calculated value
+     Keeps track of the sum of the Fats, Carbs and Proteins
+     */
+    var calculateOverallMacros:Int{
+        return Int(calculatedOverallProtein + calculatedOverallCarbs + calculatedOverallFats)
     }
 }

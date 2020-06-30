@@ -10,8 +10,6 @@ import UIKit
 
 class FoodItemsTableViewController: UITableViewController {
     
-    //MARK: Make it so each day of eating saves the logged in users uid so this screen will only show his meals
-    
     var currentDayOfEating:DayOfEating?
     let mViewModel = FoodItemsTableViewModel()
     

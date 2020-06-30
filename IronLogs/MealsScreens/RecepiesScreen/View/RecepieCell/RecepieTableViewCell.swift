@@ -9,30 +9,25 @@
 import UIKit
 
 class RecepieTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var one: UILabel!
     
-    @IBOutlet weak var two: UILabel!
     
-    @IBOutlet weak var three: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
     
-    @IBOutlet weak var four: UILabel!
+    @IBOutlet weak var proteinLabel: UILabel!
     
-    @IBOutlet weak var five: UILabel!
+    @IBOutlet weak var carbsLabel: UILabel!
     
-    @IBOutlet weak var six: UILabel!
+    @IBOutlet weak var fatsLabel: UILabel!
     
-    @IBOutlet weak var seven: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     func populateCell(recepie:APIFoodItem){
-        one.text = "\(recepie.id)"
-        //Use an API to parse the string into the image
-        two.text = recepie.image
-        three.text = recepie.protein
-        four.text = recepie.title
-        five.text = "\(recepie.calories)"
-        six.text = recepie.carbs
-        seven.text = recepie.fat
+        
+        proteinLabel.text = recepie.protein
+        nameLabel.text = recepie.title
+        caloriesLabel.text = "\(recepie.calories)"
+        carbsLabel.text = recepie.carbs
+        fatsLabel.text = recepie.fat
     }
     
 }

@@ -61,7 +61,9 @@ class RecepieTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(recepies.count > 0){
         performSegue(withIdentifier: "toRecepie", sender: recepies[indexPath.row - 1])
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,9 +81,15 @@ class RecepieTableViewController: UITableViewController {
 
 extension RecepieTableViewController:ApiFoodItemsQuerysDelegate{
     func getFoodItems(querys: [String : String]) {
+        showProgress()
         mViewModel.getRecepies(querys: querys) {[weak self] (recepies) in
             self?.recepies = recepies ?? []
+            if(recepies!.count == 0){
+                self?.showError(title: "No results")
+            }else{
             self?.tableView.reloadData()
+            self?.showSuccsess()
+            }
         }
     }
 
