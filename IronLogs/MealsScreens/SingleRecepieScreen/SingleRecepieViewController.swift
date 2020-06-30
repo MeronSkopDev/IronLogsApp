@@ -43,9 +43,36 @@ class SingleRecepieViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadImage()
         loadUI()
-        drawfatsCircle()
-        drawCarbsCircle()
-        drawProteinCircle()
+        
+        
+        ///Protein circle
+        DrawCircle.drawCircleForMacros(fillAmount:
+            DrawCircle.getPartInFraction(partToFind:
+                Int16(recepie?.protein.dropLast() ?? "0") ?? 1, total:
+                getTotalMacros()),
+                                       color: UIColor.red.cgColor,
+                                       centerX: proteinStack.center.x + 16,
+                                       centerY: proteinStack.center.y + 400,
+                                       drawOn: view.layer)
+        
+        ///Carbs circle
+        DrawCircle.drawCircleForMacros(fillAmount:
+            DrawCircle.getPartInFraction(partToFind:
+                Int16(recepie?.carbs.dropLast() ?? "0") ?? 1, total:
+                getTotalMacros()),
+                                       color: UIColor.systemBlue.cgColor,
+                                       centerX: carbsStack.center.x + 16,
+                                       centerY: carbsStack.center.y + 400,
+                                       drawOn: view.layer)
+        ///Fats circle
+        DrawCircle.drawCircleForMacros(fillAmount:
+            DrawCircle.getPartInFraction(partToFind:
+                Int16(recepie?.fat.dropLast() ?? "0") ?? 1, total:
+                getTotalMacros()),
+                                       color: UIColor.systemYellow.cgColor,
+                                       centerX: fatsStack.center.x + 15,
+                                       centerY: fatsStack.center.y + 400,
+                                       drawOn: view.layer)
     }
     
     func loadImage(){
@@ -83,8 +110,6 @@ class SingleRecepieViewController: UIViewController {
         showSuccsess(title: "Added")
     }
     
-    //MARK: Tidy this up. Move the whole circle drawing part to a utility class
-    
     func getTotalMacros() -> Int{
         let protein = Int(recepie?.protein.dropLast() ?? "0") ?? 0
         let carbs = Int(recepie?.carbs.dropLast() ?? "0") ?? 0
@@ -93,125 +118,4 @@ class SingleRecepieViewController: UIViewController {
         return protein + carbs + fats
     }
     
-    func getPartInFraction(partToFind: Int16) -> Float{
-        return Float(partToFind)/Float(getTotalMacros())
-    }
-    
-    func drawProteinCircle(){
-        let lineLayer = CAShapeLayer()
-        
-        let centerX = proteinStack.center.x + 16
-        let centerY = proteinStack.center.y + 400
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: 30, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-        
-        lineLayer.fillColor = nil
-        
-        lineLayer.path = circlePath.cgPath
-        lineLayer.strokeColor = UIColor.red.cgColor
-        lineLayer.lineWidth = 5
-        
-        lineLayer.strokeEnd = 0
-        
-        lineLayer
-            .add(getAnimationForCircle(partToFill:getPartInFraction(partToFind: Int16(recepie?.protein.dropLast() ?? "1") ?? 1)), forKey: "protein")
-        
-        let trackLayer = CAShapeLayer()
-        
-        trackLayer.path = circlePath.cgPath
-        
-        trackLayer.fillColor = nil
-        
-        trackLayer.path = circlePath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 5
-        trackLayer.lineCap = .round
-        
-        view.layer.addSublayer(trackLayer)
-        
-        view.layer.addSublayer(lineLayer)
-    }
-    
-    func drawCarbsCircle(){
-        let lineLayer = CAShapeLayer()
-        
-        let centerX = carbsStack.center.x + 16
-        let centerY = carbsStack.center.y + 400
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: 30, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-        
-        lineLayer.fillColor = nil
-        
-        lineLayer.path = circlePath.cgPath
-        lineLayer.strokeColor = UIColor.blue.cgColor
-        lineLayer.lineWidth = 5
-        
-        lineLayer.strokeEnd = 0
-        
-        lineLayer
-            .add(getAnimationForCircle(partToFill: getPartInFraction(partToFind: Int16(recepie?.carbs.dropLast() ?? "1") ?? 1)), forKey: "carbs")
-        
-        let trackLayer = CAShapeLayer()
-        
-        trackLayer.path = circlePath.cgPath
-        
-        trackLayer.fillColor = nil
-        
-        trackLayer.path = circlePath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 5
-        trackLayer.lineCap = .round
-        
-        view.layer.addSublayer(trackLayer)
-        
-        view.layer.addSublayer(lineLayer)
-    }
-    
-    func drawfatsCircle(){
-        let lineLayer = CAShapeLayer()
-        
-        let centerX = fatsStack.center.x + 15
-        let centerY = fatsStack.center.y + 400
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: 30, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
-        
-        lineLayer.fillColor = nil
-        
-        lineLayer.strokeEnd = 0
-        
-        lineLayer.path = circlePath.cgPath
-        lineLayer.strokeColor = UIColor.systemYellow.cgColor
-        lineLayer.lineWidth = 5
-        
-        lineLayer.lineCap = .round
-        
-        lineLayer
-            .add(getAnimationForCircle(partToFill: getPartInFraction(partToFind: Int16(recepie?.fat.dropLast() ?? "1") ?? 1)), forKey: "fats")
-        
-        let trackLayer = CAShapeLayer()
-        
-        trackLayer.path = circlePath.cgPath
-        
-        trackLayer.fillColor = nil
-        
-        trackLayer.path = circlePath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 5
-        trackLayer.lineCap = .round
-        
-        view.layer.addSublayer(trackLayer)
-        
-        view.layer.addSublayer(lineLayer)
-    }
-    
-    func getAnimationForCircle(partToFill:Float) -> CABasicAnimation{
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        
-        basicAnimation.toValue = partToFill
-        
-        basicAnimation.duration = 2
-        
-        //This will make sure that after the stroke is drawn it is not removed
-        basicAnimation.fillMode = .forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        return basicAnimation
-    }
 }
