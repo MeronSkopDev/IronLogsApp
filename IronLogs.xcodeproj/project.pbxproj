@@ -61,7 +61,6 @@
 		1F03611024734ABD005A588C /* MacrosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F03610E24734ABD005A588C /* MacrosTableViewCell.swift */; };
 		1F03611124734ABD005A588C /* MacrosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F03610F24734ABD005A588C /* MacrosTableViewCell.xib */; };
 		1F09C53424AAD8C200D7C358 /* DrawCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F09C53324AAD8C200D7C358 /* DrawCircle.swift */; };
-		1F09C53624ACA8C500D7C358 /* Chaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F09C53524ACA8C400D7C358 /* Chaching.swift */; };
 		1F5B97662477AD1100F3428A /* FoodItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B97642477AD1100F3428A /* FoodItemTableViewCell.swift */; };
 		1F5B97672477AD1100F3428A /* FoodItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B97652477AD1100F3428A /* FoodItemTableViewCell.xib */; };
 		1F5B976A24788E6F00F3428A /* SpoonacularManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B976924788E6F00F3428A /* SpoonacularManager.swift */; };
@@ -136,7 +135,6 @@
 		1F03610E24734ABD005A588C /* MacrosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosTableViewCell.swift; sourceTree = "<group>"; };
 		1F03610F24734ABD005A588C /* MacrosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacrosTableViewCell.xib; sourceTree = "<group>"; };
 		1F09C53324AAD8C200D7C358 /* DrawCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCircle.swift; sourceTree = "<group>"; };
-		1F09C53524ACA8C400D7C358 /* Chaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chaching.swift; sourceTree = "<group>"; };
 		1F5B97642477AD1100F3428A /* FoodItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemTableViewCell.swift; sourceTree = "<group>"; };
 		1F5B97652477AD1100F3428A /* FoodItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodItemTableViewCell.xib; sourceTree = "<group>"; };
 		1F5B976924788E6F00F3428A /* SpoonacularManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularManager.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 				1F0360A7247167B7005A588C /* Box.swift */,
 				1F0360A9247167D0005A588C /* RandomIdGen.swift */,
 				1F0360AB247167E8005A588C /* TextFieldDelegate.swift */,
-				1F09C53524ACA8C400D7C358 /* Chaching.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -829,7 +826,6 @@
 				1FBC9E9024933C3F00E25695 /* SingleRecepieViewController.swift in Sources */,
 				1FB44AD8248E8F28002BE17A /* SearchTableViewCell.swift in Sources */,
 				1F036099246FBBB9005A588C /* HomeViewController.swift in Sources */,
-				1F09C53624ACA8C500D7C358 /* Chaching.swift in Sources */,
 				1F0360B4247169E0005A588C /* WorkoutsTableViewModel.swift in Sources */,
 				1F036091246FAA00005A588C /* UserManagment.swift in Sources */,
 				1F036083246F9B44005A588C /* LogInViewController.swift in Sources */,

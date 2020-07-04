@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct APIFoodItem:Decodable{
+struct APIFoodItem:Codable{
     let id:Int
     let title:String
     let image:String
@@ -62,6 +62,18 @@ struct APIFoodItem:Decodable{
         }catch {
             carbs = "No carbs"
         }
+    }
+    
+    func encode(to encoder:Encoder) throws{
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(id, forKey: .id)
+        try container.encode(title, forKey: .title)
+        try container.encode(image, forKey: .image)
+        try container.encode(calories, forKey: .calories)
+        try container.encode(protein, forKey: .protein)
+        try container.encode(fat, forKey: .fat)
+        try container.encode(carbs, forKey: .carbs)
     }
 }
 

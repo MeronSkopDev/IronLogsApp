@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import PKHUD
 
 //https://api.spoonacular.com/recipes/findByNutrients?apiKey=0e113c7f72ff49b7bb23076e971198da&minProtein=10&maxProtein=100&minCalories=10&maxCalories=100&minCarbs=10&maxCarbs=100&minFats=10&maxFats=100&number=100
 
 
-class SpoonacularDataSource{
+class SpoonacularDataSource:ShowHud{
     
     
     static func getRecepies(searchParams:[String:String], callBack: @escaping ([APIFoodItem]?,Error?) -> Void){
@@ -23,18 +24,18 @@ class SpoonacularDataSource{
         
         baseURL.append("&number=99")
         
+        
+        
         guard let url = URL(string: baseURL)else{
-            //MARK: Handle error
-            print("--- Couldent open URL ---")
+            HUD.show(.labeledError(title: "Couldent get recepies", subtitle: nil))
             return
         }
         
         URLSession.shared.dataTask(with: url){(data, response, err) in
             
             guard let data = data else{
-                //MARK: Handle error
+                HUD.show(.labeledError(title: "Couldent get recepies", subtitle: nil))
                 callBack(nil,err)
-                print("*** Couldent get the data ***")
                 return
             }
             
@@ -43,11 +44,15 @@ class SpoonacularDataSource{
             do{
                 let APIResults = try decoder.decode([APIFoodItem].self, from: data)
                 DispatchQueue.main.sync {
+                    
+                    //MARK: cach the url and it results
+                    
+                    
+                    
                     callBack(APIResults,nil)
                 }
             }catch let error{
-                //MARK: Handle error
-                print("&&& Couldent decode DATA &&&")
+                HUD.show(.labeledError(title: "Couldent get recepies", subtitle: nil))
                 callBack(nil,error)
             }
             

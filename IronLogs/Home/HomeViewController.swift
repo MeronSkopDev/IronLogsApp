@@ -12,7 +12,14 @@ import UIKit
 import FirebaseAuth
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var workoutImage: UIImageView!
+    
+    @IBOutlet weak var barbellIcon: UIImageView!
+    
+    @IBOutlet weak var hamburgerIcon: UIImageView!
+    
+    @IBOutlet weak var foodImage: UIImageView!
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -20,30 +27,25 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var leftArmImage: UIImageView!
     
+    var direction = "None"
+    
     override func viewDidAppear(_ animated: Bool) {
         assignUserNameToLabel()
-        
-        
-        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        view.addGestureRecognizer(rightSwipeGesture)
-        
-        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        leftSwipeGesture.direction = .left
-        view.addGestureRecognizer(leftSwipeGesture)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let panRecognizer = UIPanGestureRecognizer(target: self, action:  #selector(panedView))
+        self.view.addGestureRecognizer(panRecognizer)
     }
-
+    
     /**
      This method
      Signs user out of Firebase
      */
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
         do{
-        try Auth.auth().signOut()
+            try Auth.auth().signOut()
             Router.shared.chooseScreen(ifLogeedInGoTo: "Home")
         }catch let err{
             showError(title: err.localizedDescription)
@@ -64,23 +66,64 @@ class HomeViewController: UIViewController {
         
     }
     
-    
-    
-    
-    @objc func handleSwipe(sender: UISwipeGestureRecognizer){
-        if sender.state == .ended{
-            switch sender.direction {
-            case .right:
+    @objc func panedView(sender:UIPanGestureRecognizer){
+        var startLocation = CGPoint()
+        
+        switch sender.state {
+            
+        case .began:
+            
+            startLocation = sender.location(in: self.view)
+            
+            if (startLocation.x >= 207){
+                direction = "right"
+            }else{
+                direction = "left"
                 
-                let mealsStoryboard = UIStoryboard(name: "Meals", bundle: .main)
-                Router.shared.window?.rootViewController = mealsStoryboard.instantiateInitialViewController()
-                break;
-            case .left:
-                Router.shared.chooseScreen(ifLogeedInGoTo: "Workouts")
-                break;
-            default:
-                break;
             }
+            
+            break;
+            
+        case .ended:
+            
+            let stopLocation = sender.location(in: self.view)
+            
+            if(direction == "left"){
+                let dx = stopLocation.x;
+                let distance = dx;
+                if (distance >= 230) {
+                    Router.shared.chooseScreen(ifLogeedInGoTo: "Meals")
+                }
+                foodImage.alpha = 0
+            }
+            if(direction == "right"){
+                let dx = stopLocation.x;
+                let distance = dx;
+                if (distance <= 180) {
+                    Router.shared.chooseScreen(ifLogeedInGoTo: "Workouts")
+                    
+                }
+                workoutImage.alpha = 0
+            }
+            
+            break;
+            
+        case .changed:
+            if(direction == "left"){
+                let distance = (sender.location(in:view).x) / 400
+                print(distance)
+                foodImage.alpha = distance - 0.2
+            }
+            if(direction == "right"){
+                let distance = (sender.location(in:view).x) / 200
+                print(distance)
+                workoutImage.alpha = 1 - distance - 0.1
+            }
+            
+            break;
+            
+        default:
+            break;
         }
     }
 }
