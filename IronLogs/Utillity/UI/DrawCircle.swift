@@ -15,7 +15,7 @@ struct DrawCircle{
         return Float(partToFind)/Float(total)
     }
     
-    static func drawCircleForMacros(fillAmount: Float, color: CGColor ,centerX:CGFloat, centerY: CGFloat, drawOn: CALayer){
+    static func drawCircleForMacros(fillAmount: Float, color: CGColor ,centerX:CGFloat, centerY: CGFloat, drawOn: CALayer) -> CAShapeLayer{
         let lineLayer = CAShapeLayer()
         
         let centerX = centerX
@@ -30,7 +30,7 @@ struct DrawCircle{
         
         lineLayer.strokeEnd = 0
         
-        lineLayer.add(getAnimationForCircle(partToFill: fillAmount), forKey: "")
+        lineLayer.add(getAnimationForCircle(partToFill: fillAmount), forKey: "macrosCircles")
         
         let trackLayer = CAShapeLayer()
         
@@ -46,6 +46,8 @@ struct DrawCircle{
         drawOn.addSublayer(trackLayer)
         
         drawOn.addSublayer(lineLayer)
+        
+        return lineLayer
     }
     
     

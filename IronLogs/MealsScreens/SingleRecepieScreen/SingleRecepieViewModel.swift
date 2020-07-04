@@ -6,7 +6,7 @@
 //  Copyright © 2020 Skop.inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct SingleRecepieViewModel{
     
@@ -34,6 +34,14 @@ struct SingleRecepieViewModel{
         return Int16(clean) ?? 0
     }
     
+    func addLabel(content:String, stack:UIStackView, view:UIView){
+        let proLabel = UILabel()
+        proLabel.text = content
+        proLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        proLabel.adjustsFontSizeToFitWidth = true
+        view.addSubview(proLabel)
+        stack.addArrangedSubview(proLabel)
+    }
     
     
 }

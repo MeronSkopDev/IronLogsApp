@@ -69,8 +69,8 @@ class FoodItemTableViewCell: UITableViewCell {
     @objc func changeFoodItemName(_ sender:UITextField){
         foodItem?.name = sender.text
         CM.shared.saveContext()
-        
     }
+    
     /**
     This method
     Saves the calories the user inputed in the "FoodItem"
@@ -79,7 +79,6 @@ class FoodItemTableViewCell: UITableViewCell {
         if let calories = sender.text{
             foodItem?.calories = Int16(calories) ?? 0
             CM.shared.saveContext()
-            
         }
     }
     /**
@@ -90,7 +89,6 @@ class FoodItemTableViewCell: UITableViewCell {
         if let protein = sender.text{
             foodItem?.protein = Int16(protein) ?? 0
             CM.shared.saveContext()
-            
         }
     }
     /**
@@ -101,7 +99,6 @@ class FoodItemTableViewCell: UITableViewCell {
         if let carbs = sender.text{
             foodItem?.carbs = Int16(carbs) ?? 0
             CM.shared.saveContext()
-            
         }
     }
     /**
@@ -112,7 +109,6 @@ class FoodItemTableViewCell: UITableViewCell {
         if let fats = sender.text{
             foodItem?.fats = Int16(fats) ?? 0
             CM.shared.saveContext()
-            
         }
     }
     

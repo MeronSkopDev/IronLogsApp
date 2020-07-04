@@ -21,47 +21,36 @@ class SearchTableViewCell: UITableViewCell {
         var minCalories:Int
         var maxCalories:Int
         
-        if calorieTextField.text != ""{
-            minCalories = Int(calorieTextField.text!) ?? 0
-            maxCalories = minCalories + 50
-        }else{
-            minCalories = 0
-            maxCalories = 1000
-        }
+        (minCalories, maxCalories) = getMinMaxMacros(
+            textFieldToCheck: calorieTextField,
+            maxDefault: 1000,
+            minDefault: 0, diff: 50)
         
         var minProtein:Int
         var maxProtein:Int
         
-        if proteinTextField.text != ""{
-            minProtein = Int(proteinTextField.text!) ?? 0
-            maxProtein = minProtein + 5
-        }else{
-            minProtein = 0
-            maxProtein = 100
-        }
+        (minProtein, maxProtein) = getMinMaxMacros(
+            textFieldToCheck: proteinTextField,
+            maxDefault: 100,
+            minDefault: 0, diff: 5)
+        
         
         var minFat:Int
         var maxFat:Int
         
-        if fatsTextField.text != ""{
-            minFat = Int(fatsTextField.text!) ?? 0
-            maxFat = minFat + 5
-        }else{
-            minFat = 0
-            maxFat = 100
-        }
+        (minFat, maxFat) = getMinMaxMacros(
+            textFieldToCheck: fatsTextField,
+            maxDefault: 100,
+            minDefault: 0, diff: 5)
+        
         
         var minCarbs:Int
         var maxCarbs:Int
         
-        if carbsTextField.text != ""{
-            minCarbs = Int(carbsTextField.text!) ?? 0
-            maxCarbs = minCarbs + 5
-        }else{
-            minCarbs = 0
-            maxCarbs = 100
-        }
-        
+        (minCarbs, maxCarbs) = getMinMaxMacros(
+            textFieldToCheck: carbsTextField,
+            maxDefault: 100,
+            minDefault: 0, diff: 5)
         
         queryDelegate?.getFoodItems(querys: [
             "minCalories":"\(minCalories)",
@@ -73,6 +62,20 @@ class SearchTableViewCell: UITableViewCell {
             "minFat":"\(minFat)" ,
             "maxFat":"\(maxFat)"
         ])
+    }
+    
+    func getMinMaxMacros(textFieldToCheck:UITextField, maxDefault:Int, minDefault:Int, diff:Int) -> (Int,Int){
+        var minMacros = 0
+        var maxMacros = 0
+        
+        if textFieldToCheck.text != ""{
+            minMacros = Int(textFieldToCheck.text!) ?? 0
+            maxMacros = minMacros + diff
+        }else{
+            minMacros = minDefault
+            maxMacros = maxDefault
+        }
+        return (minMacros,maxMacros)
     }
     
 }

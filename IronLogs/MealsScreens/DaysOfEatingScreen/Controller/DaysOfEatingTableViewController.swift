@@ -108,10 +108,10 @@ class DaysOfEatingTableViewController: UITableViewController {
      */
     @IBAction func addDayOfEating(_ sender: UIBarButtonItem) {
         mViewModel.createNewDayOfEating(currentUserUUID:Auth.auth().currentUser?.uid ?? "")
-        print(fetch.fetchedObjects)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "toFoodItems", sender: fetch.object(at: indexPath))
     }
     

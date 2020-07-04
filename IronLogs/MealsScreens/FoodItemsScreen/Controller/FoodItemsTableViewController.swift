@@ -89,6 +89,8 @@ class FoodItemsTableViewController: UITableViewController {
             CM.shared.saveContext()
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
+            tableView.reloadData()
+            
         }
     }
     
@@ -99,11 +101,13 @@ class FoodItemsTableViewController: UITableViewController {
      Reloads the tableVeiw
      */
     @IBAction func addFoodItem(_ sender: UIBarButtonItem) {
+        //MARK: Check why sometimes it adds the new row with the parameter of the existing one
         mViewModel.addNewFoodItem(dayOfEating: currentDayOfEating)
         tableView.beginUpdates()
         tableView.insertRows(at:
-            [(NSIndexPath(row: currentDayOfEating!.foodItemsInside.value.count + 1, section: 0) as IndexPath)],
-                             with: .automatic)
+            [(NSIndexPath(row:
+                currentDayOfEating!.foodItemsInside.value.count + 1,
+                          section: 0) as IndexPath)], with: .automatic)
         tableView.endUpdates()
     }
     
@@ -125,5 +129,7 @@ class FoodItemsTableViewController: UITableViewController {
         dest.currentDayOfEating = currentDayOfEating
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

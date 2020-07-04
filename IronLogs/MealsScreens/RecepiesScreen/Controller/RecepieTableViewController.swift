@@ -61,6 +61,7 @@ class RecepieTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if(recepies.count > 0){
         performSegue(withIdentifier: "toRecepie", sender: recepies[indexPath.row - 1])
         }

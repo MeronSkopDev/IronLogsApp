@@ -196,11 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycJ-Vj-Vgt">
-                                <rect key="frame" x="142" y="256" width="130" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="6cj-6d-pwe"/>
-                                    <constraint firstAttribute="width" constant="130" id="ji1-Gt-2tA"/>
-                                </constraints>
+                                <rect key="frame" x="107" y="240" width="200" height="130"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-nR-wzN">
                                 <rect key="frame" x="16" y="402" width="382" height="39.5"/>
@@ -283,18 +279,44 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pna-cj-hnZ">
+                                <rect key="frame" x="334.5" y="535.5" width="47.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cons:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scc-Sw-JRI">
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aai-UW-BIe">
+                                <rect key="frame" x="32" y="535.5" width="43" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u7-8b-LMk">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ycJ-Vj-Vgt" firstAttribute="top" secondItem="Rlr-Ls-eJw" secondAttribute="top" constant="256" id="72B-em-lRF"/>
+                            <constraint firstItem="Rlr-Ls-eJw" firstAttribute="trailing" secondItem="pna-cj-hnZ" secondAttribute="trailing" constant="32" id="5Rs-4N-bpU"/>
+                            <constraint firstItem="aai-UW-BIe" firstAttribute="top" secondItem="8Rg-gj-MX2" secondAttribute="bottom" constant="32" id="9Qa-gI-3Or"/>
+                            <constraint firstItem="ycJ-Vj-Vgt" firstAttribute="leading" secondItem="Rlr-Ls-eJw" secondAttribute="leading" constant="107" id="ALE-uo-LQH"/>
+                            <constraint firstItem="ycJ-Vj-Vgt" firstAttribute="centerX" secondItem="wI8-xv-YMg" secondAttribute="centerX" id="ATa-Ea-WMb"/>
+                            <constraint firstItem="bMA-nR-wzN" firstAttribute="top" secondItem="ycJ-Vj-Vgt" secondAttribute="bottom" constant="32" id="Be8-sk-NCL"/>
                             <constraint firstItem="bMA-nR-wzN" firstAttribute="leading" secondItem="Rlr-Ls-eJw" secondAttribute="leading" constant="16" id="GLB-qt-RgZ"/>
-                            <constraint firstItem="bMA-nR-wzN" firstAttribute="top" secondItem="Rlr-Ls-eJw" secondAttribute="top" constant="402" id="MXv-Fe-c9y"/>
                             <constraint firstItem="8Rg-gj-MX2" firstAttribute="centerX" secondItem="wI8-xv-YMg" secondAttribute="centerX" id="SoG-nv-R0Y"/>
+                            <constraint firstItem="ycJ-Vj-Vgt" firstAttribute="top" secondItem="Rlr-Ls-eJw" secondAttribute="top" constant="240" id="Ubl-sB-FSK"/>
+                            <constraint firstItem="pna-cj-hnZ" firstAttribute="top" secondItem="8Rg-gj-MX2" secondAttribute="bottom" constant="32" id="X1g-NG-jHh"/>
                             <constraint firstItem="Rlr-Ls-eJw" firstAttribute="trailing" secondItem="bMA-nR-wzN" secondAttribute="trailing" constant="16" id="XCo-NO-HBu"/>
                             <constraint firstItem="Rlr-Ls-eJw" firstAttribute="bottom" secondItem="bMA-nR-wzN" secondAttribute="bottom" constant="366.5" id="fNc-LK-fRK"/>
                             <constraint firstItem="8Rg-gj-MX2" firstAttribute="top" secondItem="bMA-nR-wzN" secondAttribute="bottom" constant="32" id="kFq-j9-OXO"/>
-                            <constraint firstItem="bMA-nR-wzN" firstAttribute="top" secondItem="ycJ-Vj-Vgt" secondAttribute="bottom" constant="16" id="lJ7-nh-Yhl"/>
-                            <constraint firstItem="ycJ-Vj-Vgt" firstAttribute="centerX" secondItem="bMA-nR-wzN" secondAttribute="centerX" id="rWG-6v-n2p"/>
+                            <constraint firstItem="aai-UW-BIe" firstAttribute="leading" secondItem="Rlr-Ls-eJw" secondAttribute="leading" constant="32" id="qhG-k6-3z2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rlr-Ls-eJw"/>
                     </view>
@@ -303,9 +325,11 @@
                         <outlet property="caloriesLabel" destination="GKV-sp-NMn" id="99H-rm-eGl"/>
                         <outlet property="carbsLabel" destination="tdW-hD-Nsd" id="V7l-kW-os7"/>
                         <outlet property="carbsStack" destination="QMn-AF-Yrx" id="XaU-4R-41W"/>
+                        <outlet property="consStack" destination="pna-cj-hnZ" id="lTj-cw-8ap"/>
                         <outlet property="fatsLabel" destination="jyN-mx-rjF" id="Pm5-J2-Jm8"/>
                         <outlet property="fatsStack" destination="nIj-nP-ld3" id="jOV-4U-FO4"/>
                         <outlet property="foodImage" destination="ycJ-Vj-Vgt" id="F2c-Of-0Uv"/>
+                        <outlet property="prosStack" destination="aai-UW-BIe" id="i16-Vu-LjO"/>
                         <outlet property="proteinLabel" destination="Igz-Vu-tuH" id="XDg-3C-fJK"/>
                         <outlet property="proteinStack" destination="G8F-Zw-nEW" id="yRJ-ML-mb0"/>
                     </connections>

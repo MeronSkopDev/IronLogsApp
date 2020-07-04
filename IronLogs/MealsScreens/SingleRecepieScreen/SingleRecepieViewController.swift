@@ -29,6 +29,10 @@ class SingleRecepieViewController: UIViewController {
     
     @IBOutlet weak var fatsStack: UIStackView!
     
+    @IBOutlet weak var prosStack: UIStackView!
+    
+    @IBOutlet weak var consStack: UIStackView!
+    
     var currentDayOfEating:DayOfEating?
     var recepie:APIFoodItem?
     var url:String?
@@ -43,6 +47,8 @@ class SingleRecepieViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadImage()
         loadUI()
+        addPros()
+        addCons()
         
         
         ///Protein circle
@@ -79,7 +85,13 @@ class SingleRecepieViewController: UIViewController {
         guard let recepieImage = recepie?.image else{
             return
         }
-        foodImage.sd_setImage(with: URL(string: recepieImage))
+        if let image = SDImageCache.shared.imageFromCache(forKey: recepieImage){
+            foodImage.image = image
+        }else{
+            foodImage.sd_setImage(with: URL(string: recepieImage))
+            SDImageCache.shared.store(foodImage.image, forKey: recepieImage) {
+            }
+        }
     }
     
     func loadUI(){
@@ -91,11 +103,21 @@ class SingleRecepieViewController: UIViewController {
     
     
     @IBAction func goToRecepieWebsite(_ sender: UIButton) {
-        guard let url = url else{
+        guard let id = recepie?.id else {
             return
         }
-        if let urlCon = URL(string: url){
-            UIApplication.shared.open(urlCon)
+        SpoonacularDataSource.getRecepiePage(id: id) { (recepieUrl, err) in
+            if let _ = err {
+                self.showError(title: "Couldent connect")
+            }else{
+                guard let url = recepieUrl?.sourceUrl else{
+                    self.showError(title: "Couldent connect")
+                    return
+                }
+                if let urlCon = URL(string: url){
+                    UIApplication.shared.open(urlCon)
+                }
+            }
         }
     }
     
@@ -117,5 +139,31 @@ class SingleRecepieViewController: UIViewController {
         
         return protein + carbs + fats
     }
+    
+    func addPros(){
+        if(Int(recepie!.protein.dropLast()) ?? 0 >= 30){
+            mViewModel.addLabel(content: "High in protein", stack: prosStack, view: view)
+        }
+        if(Int(recepie!.fat.dropLast()) ?? 0 <= 10){
+            mViewModel.addLabel(content: "Low in fats", stack: prosStack, view: view)
+        }
+        if(Int(recepie!.carbs.dropLast()) ?? 0 < 20){
+            mViewModel.addLabel(content: "Low in carbs", stack: prosStack, view: view)
+        }
+    }
+    
+    func addCons(){
+        if(Int(recepie!.protein.dropLast()) ?? 0 <= 10){
+            mViewModel.addLabel(content: "Low in protein", stack: consStack, view: view)
+        }
+        if(Int(recepie!.fat.dropLast()) ?? 0 > 20){
+            mViewModel.addLabel(content: "High in fats", stack: consStack, view: view)
+        }
+        if(Int(recepie!.carbs.dropLast()) ?? 0 > 40){
+            mViewModel.addLabel(content: "High in carbs", stack: consStack, view: view)
+        }
+    }
+    
+    
     
 }
