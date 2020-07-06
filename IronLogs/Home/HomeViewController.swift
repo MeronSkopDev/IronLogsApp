@@ -29,6 +29,9 @@ class HomeViewController: UIViewController {
     
     var direction = "None"
     
+    var barbellIconOriginalLocationX:CGFloat!
+    var hamburgerIconOriginalLocationX:CGFloat!
+    
     override func viewDidAppear(_ animated: Bool) {
         assignUserNameToLabel()
     }
@@ -37,6 +40,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let panRecognizer = UIPanGestureRecognizer(target: self, action:  #selector(panedView))
         self.view.addGestureRecognizer(panRecognizer)
+        
+        barbellIconOriginalLocationX = barbellIcon.center.x
+        hamburgerIconOriginalLocationX = hamburgerIcon.center.x
     }
     
     /**
@@ -90,34 +96,45 @@ class HomeViewController: UIViewController {
             
             if(direction == "left"){
                 let dx = stopLocation.x;
-                let distance = dx;
-                if (distance >= 230) {
+                if (dx >= 230) {
                     Router.shared.chooseScreen(ifLogeedInGoTo: "Meals")
                 }
                 foodImage.alpha = 0
+                hamburgerIcon.center = CGPoint(x: hamburgerIconOriginalLocationX , y: hamburgerIcon.center.y)
+                hamburgerIcon.alpha = 1
             }
             if(direction == "right"){
                 let dx = stopLocation.x;
-                let distance = dx;
-                if (distance <= 180) {
+                if (dx <= 180) {
                     Router.shared.chooseScreen(ifLogeedInGoTo: "Workouts")
                     
                 }
                 workoutImage.alpha = 0
+                barbellIcon.center = CGPoint(x: barbellIconOriginalLocationX, y: barbellIcon.center.y)
+                barbellIcon.alpha = 1
             }
             
             break;
             
         case .changed:
             if(direction == "left"){
-                let distance = (sender.location(in:view).x) / 400
-                print(distance)
-                foodImage.alpha = distance - 0.2
+                let dx = (sender.location(in:view).x) / 400
+                foodImage.alpha = dx - 0.3
+                
+                if(hamburgerIcon.center.x < 100){
+                hamburgerIcon.center = CGPoint(x: hamburgerIcon.center.x + dx, y: hamburgerIcon.center.y)
+                }
+                hamburgerIcon.alpha = 1 - dx - 0.3
             }
+            
             if(direction == "right"){
-                let distance = (sender.location(in:view).x) / 200
-                print(distance)
-                workoutImage.alpha = 1 - distance - 0.1
+                let dx = (sender.location(in:view).x) / 400
+                workoutImage.alpha = 1 - dx + 0.2
+                
+                if(barbellIcon.center.x > 40){
+                barbellIcon.center = CGPoint(x: barbellIcon.center.x - dx, y: barbellIcon.center.y)
+                }
+                barbellIcon.alpha = dx - 0.2
             }
             
             break;

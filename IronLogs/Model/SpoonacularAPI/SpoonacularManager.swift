@@ -15,7 +15,8 @@ import PKHUD
 class SpoonacularDataSource:ShowHud{
     
     
-    static func getRecepies(searchParams:[String:String], callBack: @escaping ([APIFoodItem]?,Error?) -> Void){
+    
+    static func getRecepies(searchParams:[String:String],cacheString:String, callBack: @escaping ([APIFoodItem]?,Error?) -> Void){
         var baseURL:String = "https://api.spoonacular.com/recipes/findByNutrients?apiKey=0e113c7f72ff49b7bb23076e971198da"
         
         for (key,value) in searchParams{
@@ -24,7 +25,14 @@ class SpoonacularDataSource:ShowHud{
         
         baseURL.append("&number=99")
         
-        
+        if let cached = SpoonacularCache.getCached(cacheString: cacheString){
+            if (cached.isEmpty){
+                
+            }else{
+                callBack(cached,nil)
+                return
+            }
+        }
         
         guard let url = URL(string: baseURL)else{
             HUD.show(.labeledError(title: "Couldent get recepies", subtitle: nil))
@@ -44,11 +52,10 @@ class SpoonacularDataSource:ShowHud{
             do{
                 let APIResults = try decoder.decode([APIFoodItem].self, from: data)
                 DispatchQueue.main.sync {
-                    
-                    //MARK: cach the url and it results
-                    
-                    
-                    
+                    SpoonacularCache.cache(cacheString: cacheString, toCache: APIResults)
+//                    print("BASE")
+//                    print(baseURL)
+//                    print("BASE")
                     callBack(APIResults,nil)
                 }
             }catch let error{

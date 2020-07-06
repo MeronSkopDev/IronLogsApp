@@ -81,9 +81,9 @@ class RecepieTableViewController: UITableViewController {
 }
 
 extension RecepieTableViewController:ApiFoodItemsQuerysDelegate{
-    func getFoodItems(querys: [String : String]) {
+    func getFoodItems(querys: [String : String], cacheString: String) {
         showProgress()
-        mViewModel.getRecepies(querys: querys) {[weak self] (recepies) in
+        mViewModel.getRecepies(querys: querys, cacheString: cacheString) {[weak self] (recepies) in
             self?.recepies = recepies ?? []
             if(recepies!.count == 0){
                 self?.showError(title: "No results")
@@ -93,6 +93,4 @@ extension RecepieTableViewController:ApiFoodItemsQuerysDelegate{
             }
         }
     }
-
-
 }

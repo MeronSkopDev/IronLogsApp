@@ -129,7 +129,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barbellIcon" destination="itD-x8-5dN" id="wVr-1U-eyh"/>
-                        <outlet property="barbellStackView" destination="V8k-f7-bN3" id="PSe-IA-8eO"/>
                         <outlet property="foodImage" destination="LZJ-ix-oOh" id="HWx-68-YSK"/>
                         <outlet property="hamburgerIcon" destination="f7f-64-Wge" id="nfq-UN-ojq"/>
                         <outlet property="leftArmImage" destination="Fwi-M4-m3v" id="Xsb-67-d6B"/>

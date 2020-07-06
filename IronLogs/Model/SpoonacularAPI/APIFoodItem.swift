@@ -78,6 +78,14 @@ struct APIFoodItem:Codable{
 }
 
 
+class APIFoodItemHolder{
+    var foodItems:[APIFoodItem]!
+    
+    init(foodItems:[APIFoodItem]){
+        self.foodItems = foodItems
+    }
+}
+
 
 
 

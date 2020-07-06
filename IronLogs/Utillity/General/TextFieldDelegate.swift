@@ -30,5 +30,5 @@ protocol SuperSetDelegate:class{
 ///This protocl is used to get the querys for finding recepies from "SearchTableViewCell" into "RecepiesTableViewController"
 
 protocol ApiFoodItemsQuerysDelegate {
-    func getFoodItems(querys:[String:String])
+    func getFoodItems(querys:[String:String], cacheString:String)
 }

@@ -10,8 +10,8 @@ import Foundation
 
 struct RecepieTableViewModel:ShowHud{
     
-    func getRecepies(querys:[String:String], callBack:@escaping ([APIFoodItem]?) -> Void){
-        SpoonacularDataSource.getRecepies(searchParams: querys) { (foodItems, err) in
+    func getRecepies(querys:[String:String],cacheString:String, callBack:@escaping ([APIFoodItem]?) -> Void){
+        SpoonacularDataSource.getRecepies(searchParams: querys, cacheString: cacheString) { (foodItems, err) in
             if err != nil{
                 self.showError(title: "Couldent get recepies")
             } else{

@@ -52,6 +52,8 @@ class SearchTableViewCell: UITableViewCell {
             maxDefault: 100,
             minDefault: 0, diff: 5)
         
+        let cacheString = "\(minCalories)\(maxCalories)\(minCarbs)\(maxCarbs)\(minProtein)\(maxProtein)\(minFat)\(maxFat)"
+        
         queryDelegate?.getFoodItems(querys: [
             "minCalories":"\(minCalories)",
             "maxCalories":"\(maxCalories)",
@@ -61,7 +63,8 @@ class SearchTableViewCell: UITableViewCell {
             "maxCarbs":"\(maxCarbs)",
             "minFat":"\(minFat)" ,
             "maxFat":"\(maxFat)"
-        ])
+            ],
+            cacheString:cacheString)
     }
     
     func getMinMaxMacros(textFieldToCheck:UITextField, maxDefault:Int, minDefault:Int, diff:Int) -> (Int,Int){
