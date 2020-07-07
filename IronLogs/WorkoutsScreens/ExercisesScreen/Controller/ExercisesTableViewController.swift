@@ -118,6 +118,7 @@ class ExercisesTableViewController: UITableViewController {
     
     
     @IBAction func updateExercisesButtonTapped(_ sender: Any) {
+        showProgress()
         guard let exercisesIndex = workoutIndex else{
             return
         }
@@ -131,6 +132,7 @@ class ExercisesTableViewController: UITableViewController {
             title: details.title,
             exercises: currentExercises,
             collectDoneBool: {(done) in
+                self.showSuccsess()
         })
     }
     

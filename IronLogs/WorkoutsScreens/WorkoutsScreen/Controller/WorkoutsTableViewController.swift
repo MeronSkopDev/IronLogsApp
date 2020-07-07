@@ -98,12 +98,14 @@ class WorkoutsTableViewController: UITableViewController {
      Saves any changes the user made in the database
      */
     @IBAction func updateWorkouts(_ sender: Any) {
+        showProgress()
         saveButton.isEnabled = false
         mViewModel.updateWorkouts(
             workouts: WorkoutsInUse.shared().workouts.value,
             collectDoneBool: {[weak self](done) in
                 if done{
                     self?.saveButton.isEnabled = true
+                    self?.showSuccsess()
                 }
         })
     }

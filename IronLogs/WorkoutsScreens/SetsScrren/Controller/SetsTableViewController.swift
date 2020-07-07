@@ -138,7 +138,7 @@ class SetsTableViewController: UITableViewController {
      Saves any changes the user made in the database
      */
     @IBAction func updateSetsTapped(_ sender: UIBarButtonItem) {
-        tableView.reloadData()
+        //tableView.reloadData()
         
         saveButton.isEnabled = false
         guard let workoutsIndex = workoutsIndex else{
