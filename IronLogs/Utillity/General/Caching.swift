@@ -28,7 +28,6 @@ struct SpoonacularCache{
             print("****** Gotten from cache ******")
             return cached.foodItems
         }
-        print(cache.object(forKey: cacheString)?.foodItems)
         print("&&&&&& Was not in cache &&&&&&")
         return []
     }

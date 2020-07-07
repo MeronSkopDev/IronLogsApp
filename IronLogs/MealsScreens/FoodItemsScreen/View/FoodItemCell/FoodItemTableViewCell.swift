@@ -11,11 +11,13 @@ import UIKit
 class FoodItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var proteinTextField: UITextField!
     @IBOutlet weak var carbsTextField: UITextField!
     @IBOutlet weak var fatsTextField: UITextField!
     @IBOutlet weak var timeEatenLabel: UILabel!
+    
+    @IBOutlet weak var caloriesLabel: UILabel!
+    
     
     var foodItem:FoodItem?
     
@@ -28,7 +30,7 @@ class FoodItemTableViewCell: UITableViewCell {
         self.foodItem = foodItem
         
         nameTextField.text = foodItem.name
-        caloriesTextField.text = "CAL: \(foodItem.calories)"
+        caloriesLabel.text = "CAL: \(foodItem.calculatedOverallCalories)"
         proteinTextField.text = "P: \(foodItem.protein)"
         carbsTextField.text = "C: \(foodItem.carbs)"
         fatsTextField.text = "F: \(foodItem.fats)"
@@ -51,12 +53,10 @@ class FoodItemTableViewCell: UITableViewCell {
      */
     func initObservers(){
         nameTextField.addTarget(self, action: #selector(changeFoodItemName(_:)), for: .editingChanged)
-        caloriesTextField.addTarget(self, action: #selector(changeFoodItemCalories(_:)), for: .editingChanged)
         proteinTextField.addTarget(self, action: #selector(changeFoodItemProtein(_:)), for: .editingChanged)
         carbsTextField.addTarget(self, action: #selector(changeFoodItemCarbs(_:)), for: .editingChanged)
         fatsTextField.addTarget(self, action: #selector(changeFoodItemFats(_:)), for: .editingChanged)
-        
-        caloriesTextField.addTarget(self, action: #selector(updateFoodItemCaloriesTextField(_:)), for: .editingDidEnd)
+    
         proteinTextField.addTarget(self, action: #selector(updateFoodItemProteinTextField(_:)), for: .editingDidEnd)
         carbsTextField.addTarget(self, action: #selector(updateFoodItemCarbsTextField(_:)), for: .editingDidEnd)
         fatsTextField.addTarget(self, action: #selector(updateFoodItemFatsTextField(_:)), for: .editingDidEnd)
@@ -71,16 +71,6 @@ class FoodItemTableViewCell: UITableViewCell {
         CM.shared.saveContext()
     }
     
-    /**
-    This method
-    Saves the calories the user inputed in the "FoodItem"
-    */
-    @objc func changeFoodItemCalories(_ sender:UITextField){
-        if let calories = sender.text{
-            foodItem?.calories = Int16(calories) ?? 0
-            CM.shared.saveContext()
-        }
-    }
     /**
     This method
     Saves the protein the user inputed in the "FoodItem"
@@ -112,21 +102,17 @@ class FoodItemTableViewCell: UITableViewCell {
         }
     }
     
-    /**
-    This method
-    Updates the TextFields so it has "/*nutrientName*/ /*amountOfNutrient*/"
-    */
-    @objc func updateFoodItemCaloriesTextField(_ sender:UITextField){
-        caloriesTextField.text = "CAL: \(foodItem?.calories ?? 0)"
-    }
     @objc func updateFoodItemProteinTextField(_ sender:UITextField){
         proteinTextField.text = "P: \(foodItem?.protein ?? 0)"
+        caloriesLabel.text = "CAL: \(foodItem?.calculatedOverallCalories ?? 0)"
     }
     @objc func updateFoodItemCarbsTextField(_ sender:UITextField){
         carbsTextField.text = "C: \(foodItem?.carbs ?? 0)"
+        caloriesLabel.text = "CAL: \(foodItem?.calculatedOverallCalories ?? 0)"
     }
     @objc func updateFoodItemFatsTextField(_ sender:UITextField){
         fatsTextField.text = "F: \(foodItem?.fats ?? 0)"
+        caloriesLabel.text = "CAL: \(foodItem?.calculatedOverallCalories ?? 0)"
     }
     
 }

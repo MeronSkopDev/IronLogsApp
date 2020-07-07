@@ -10,7 +10,7 @@ import Foundation
 import FirebaseFirestore
 
 ///This part of the struct is to get data
-struct FSData{
+struct FSData: ShowHud{
     
     static private let fireStoreDatabase = Firestore.firestore()
     

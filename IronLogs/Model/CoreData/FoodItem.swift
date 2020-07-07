@@ -24,4 +24,18 @@ extension FoodItem{
         self.protein = protein
         self.name = name
     }
+    
+    var calculatedOverallCalories:Int16{
+        var calories:Int16 = 0
+        
+        let carbsCal = carbs * 4
+        
+        let fatsCal = fats * 9
+        
+        let proteinCal = protein * 4
+        
+        calories = fatsCal + carbsCal + proteinCal
+        
+        return calories
+    }
 }

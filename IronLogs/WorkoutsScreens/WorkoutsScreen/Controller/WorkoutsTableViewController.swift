@@ -21,7 +21,6 @@ class WorkoutsTableViewController: UITableViewController {
          */
         WorkoutsInUse.shared().workouts.bind {[weak self] (workouts) -> Void in
             self?.tableView.reloadData()
-            
         }
         
         

@@ -46,7 +46,7 @@ extension DayOfEating{
     var calculatedOverallCalories:Int16{
         var calories:Int16 = 0
         for i in foodItemsInside.value{
-            calories = calories + i.calories
+            calories = calories + i.calculatedOverallCalories
         }
         overallCalories = calories
         return calories

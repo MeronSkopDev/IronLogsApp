@@ -10,7 +10,9 @@ import Foundation
 
 
 
-struct APIFoodItem:Codable{
+struct APIFoodItem: Codable{
+    
+    
     let id:Int
     let title:String
     let image:String
@@ -75,15 +77,27 @@ struct APIFoodItem:Codable{
         try container.encode(fat, forKey: .fat)
         try container.encode(carbs, forKey: .carbs)
     }
+    
 }
 
 
-class APIFoodItemHolder{
+class APIFoodItemHolder: NSObject, NSDiscardableContent{
+    
     var foodItems:[APIFoodItem]!
     
     init(foodItems:[APIFoodItem]){
         self.foodItems = foodItems
     }
+    
+    func beginContentAccess() -> Bool {return true}
+    
+    func endContentAccess() {}
+    
+    func discardContentIfPossible() {}
+    
+    func isContentDiscarded() -> Bool {return false}
+    
+    
 }
 
 

@@ -43,5 +43,4 @@ struct SingleRecepieViewModel{
         stack.addArrangedSubview(proLabel)
     }
     
-    
 }

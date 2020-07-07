@@ -37,6 +37,8 @@ class SingleRecepieViewController: UIViewController {
     var recepie:APIFoodItem?
     var url:String?
     
+    var consAndProsLoaded = false
+    
     let mViewModel = SingleRecepieViewModel()
     
     override func viewDidLoad() {
@@ -47,9 +49,6 @@ class SingleRecepieViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadImage()
         loadUI()
-        addPros()
-        addCons()
-        
         
         ///Protein circle
         DrawCircle.drawCircleForMacros(fillAmount:
@@ -99,6 +98,11 @@ class SingleRecepieViewController: UIViewController {
         proteinLabel.text = "\(recepie?.protein.dropLast() ?? "0")"
         carbsLabel.text = "\(recepie?.carbs.dropLast() ?? "0")"
         fatsLabel.text = "\(recepie?.fat.dropLast() ?? "0")"
+        if(!consAndProsLoaded){
+            addPros()
+            addCons()
+            consAndProsLoaded = !consAndProsLoaded
+        }
     }
     
     
