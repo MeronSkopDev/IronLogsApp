@@ -16,8 +16,6 @@ class SetsTableViewController: UITableViewController {
     var workoutsIndex:Int?
     let mViewModel = SetsViewModel()
     
-    var isCurrentlyDeleating = false
-    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -77,6 +75,7 @@ class SetsTableViewController: UITableViewController {
                             let cell = tableView.dequeueReusableCell(withIdentifier: "regularSetNib", for: indexPath) as! RegularSetTableViewCell
                             cell.initCell(currentSet: currentSet)
                             cell.initTextObserver()
+                            
                             return cell
                             
                         case Workout.Exercise.Set.SetType.superSet:
@@ -88,6 +87,7 @@ class SetsTableViewController: UITableViewController {
                                     .exerciseName ?? " ",
                                 currentSet: currentSet)
                             cell.initDelegate()
+                            
                             return cell
                         default:
                             break
@@ -115,7 +115,6 @@ class SetsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            isCurrentlyDeleating = true
             tableView.beginUpdates()
             guard let workoutsIndex = workoutsIndex else{
                 return
@@ -129,7 +128,6 @@ class SetsTableViewController: UITableViewController {
                 .sets?.remove(at: indexPath.row - 1)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            isCurrentlyDeleating = false
         }
     }
     

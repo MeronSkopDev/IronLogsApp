@@ -53,9 +53,6 @@ class SpoonacularDataSource:ShowHud{
                 let APIResults = try decoder.decode([APIFoodItem].self, from: data)
                 DispatchQueue.main.sync {
                     SpoonacularCache.cache(cacheString: cacheString, toCache: APIResults)
-//                    print("BASE")
-//                    print(baseURL)
-//                    print("BASE")
                     callBack(APIResults,nil)
                 }
             }catch let error{
@@ -79,9 +76,7 @@ class SpoonacularDataSource:ShowHud{
         URLSession.shared.dataTask(with: url){(data, res, err) in
             
             guard let data = data else{
-                //MARK: Handle error
                 callBack(nil,err)
-                print("*** Couldent get the data FOR URL ***")
                 return
             }
             
@@ -93,7 +88,6 @@ class SpoonacularDataSource:ShowHud{
                     callBack(results,nil)
                 }
             }catch let e{
-                print("&&& Couldent decode DATA FOR URL &&&")
                 DispatchQueue.main.async {
                     callBack(nil,e)
                 }

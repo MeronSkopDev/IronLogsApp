@@ -23,6 +23,8 @@ class SuperSetTableViewCell: UITableViewCell {
     
     @IBOutlet weak var superExerciseNameEditText: UITextField!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     var currentSet:Workout.Exercise.Set?
     
     func initCell(currentExerciseName:String,currentSet:Workout.Exercise.Set){
@@ -44,6 +46,7 @@ class SuperSetTableViewCell: UITableViewCell {
         superExerciseRepsEditText.addTarget(self, action: #selector(observeSuperRepsChange(_:)), for: .editingChanged)
         superExerciseNameEditText.addTarget(self, action: #selector(observeSuperNameChange(_:)), for: .editingChanged)
     }
+    
     
     @objc func observeWeightChange(_ titleLabel:UITextField){
         if let weight =  titleLabel.text {

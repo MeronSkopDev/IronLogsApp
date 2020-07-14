@@ -16,6 +16,8 @@ class RegularSetTableViewCell: UITableViewCell {
     
     var cellSetIndex:Int?
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     var currentSet:Workout.Exercise.Set?
     
     /**
@@ -60,5 +62,7 @@ class RegularSetTableViewCell: UITableViewCell {
             currentSet?.reps = Int(reps) ?? 0
         }
     }
+    
+    
     
 }

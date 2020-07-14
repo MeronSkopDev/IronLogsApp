@@ -188,13 +188,14 @@ class WorkoutsInUse:ShowHud{
         workoutsInUse.workouts.value = []
     }
     
-    static func loadData(){
+    static func loadData(complition: @escaping (Bool) -> Void){
         FSData.getUserWorkouts(uid: currentUserUid) { (workouts) in
             guard let workouts = workouts else{
                 HUD.flash(.labeledError(title: "Couldent get workouts", subtitle: nil))
                 return
             }
             workoutsInUse.workouts.value = workouts
+            complition(true)
         }
     }
     

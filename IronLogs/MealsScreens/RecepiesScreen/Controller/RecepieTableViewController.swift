@@ -15,6 +15,8 @@ class RecepieTableViewController: UITableViewController {
     var currentDayOfEating:DayOfEating?
     var recepies:[APIFoodItem] = []
     
+    var lastImageNumChosen = 1
+    
     let mViewModel = RecepieTableViewModel()
     
     override func viewDidLoad() {
@@ -49,9 +51,8 @@ class RecepieTableViewController: UITableViewController {
         
         if indexPath.row >= 1{
         let cell = tableView.dequeueReusableCell(withIdentifier: "recepieCell", for: indexPath)  as! RecepieTableViewCell
-            
-        
             cell.populateCell(recepie: recepies[indexPath.row - 1])
+            lastImageNumChosen = cell.choosePic(lastImageNumChosen: lastImageNumChosen)
             return cell
         }
         

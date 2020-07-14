@@ -33,6 +33,8 @@ class SingleRecepieViewController: UIViewController {
     
     @IBOutlet weak var consStack: UIStackView!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     var currentDayOfEating:DayOfEating?
     var recepie:APIFoodItem?
     var url:String?
@@ -49,6 +51,7 @@ class SingleRecepieViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         loadImage()
         loadUI()
+        choosePic()
         
         ///Protein circle
         DrawCircle.drawCircleForMacros(fillAmount:
@@ -57,7 +60,7 @@ class SingleRecepieViewController: UIViewController {
                 getTotalMacros()),
                                        color: UIColor.red.cgColor,
                                        centerX: proteinStack.center.x + 16,
-                                       centerY: proteinStack.center.y + 400,
+                                       centerY: proteinStack.center.y + 410,
                                        drawOn: view.layer)
         
         ///Carbs circle
@@ -67,7 +70,7 @@ class SingleRecepieViewController: UIViewController {
                 getTotalMacros()),
                                        color: UIColor.systemBlue.cgColor,
                                        centerX: carbsStack.center.x + 16,
-                                       centerY: carbsStack.center.y + 400,
+                                       centerY: carbsStack.center.y + 410,
                                        drawOn: view.layer)
         ///Fats circle
         DrawCircle.drawCircleForMacros(fillAmount:
@@ -76,7 +79,7 @@ class SingleRecepieViewController: UIViewController {
                 getTotalMacros()),
                                        color: UIColor.systemYellow.cgColor,
                                        centerX: fatsStack.center.x + 15,
-                                       centerY: fatsStack.center.y + 400,
+                                       centerY: fatsStack.center.y + 410,
                                        drawOn: view.layer)
     }
     
@@ -86,8 +89,12 @@ class SingleRecepieViewController: UIViewController {
         }
         if let image = SDImageCache.shared.imageFromCache(forKey: recepieImage){
             foodImage.image = image
+            foodImage.layer.cornerRadius = 8.0
+            foodImage.clipsToBounds = true
         }else{
             foodImage.sd_setImage(with: URL(string: recepieImage))
+            foodImage.layer.cornerRadius = 8.0
+            foodImage.clipsToBounds = true
             SDImageCache.shared.store(foodImage.image, forKey: recepieImage) {
             }
         }
@@ -168,6 +175,9 @@ class SingleRecepieViewController: UIViewController {
         }
     }
     
-    
+    func choosePic(){
+        let imageNum = Int.random(in: 1...5)
+        backgroundImage.image = UIImage(named: "tableTop\(imageNum)")
+    }
     
 }

@@ -14,19 +14,12 @@ class WorkoutsTableViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var lastImageNumChosen = 1
+    var didUpdate = false
     
     override func viewDidAppear(_ animated: Bool) {
-        WorkoutsInUse.loadData()
-        /**
-         This observes "WorkoutsInUse.shared().workouts"
-         Any changes made to "WorkoutsInUse.shared().workouts" will reload this tableView
-         */
-        WorkoutsInUse.shared().workouts.bind {[weak self] (workouts) -> Void in
-            self?.tableView.reloadData()
-        }
-        
-        
-        
+        WorkoutsInUse.loadData(complition: {_ in
+            self.tableView.reloadData()
+        })
     }
     
     private let mViewModel = WorkoutsTableViewModel()
@@ -128,6 +121,11 @@ class WorkoutsTableViewController: UITableViewController {
                 date: currentWorkout.workoutDetails.dateOfCreation,
                 exercises: currentWorkout.exercises!)
         }
+        tableView.beginUpdates()
+        tableView.insertRows(at:
+            [(NSIndexPath(row: WorkoutsInUse.shared().workouts.value.count - 1 ,
+                          section: 0) as IndexPath)], with: .automatic)
+        tableView.endUpdates()
         
     }
     
