@@ -19,6 +19,9 @@ class FoodItemTableViewCell: UITableViewCell {
     @IBOutlet weak var caloriesLabel: UILabel!
     
     
+    @IBOutlet weak var backroundImage: UIImageView!
+    var didSet = false
+    
     var foodItem:FoodItem?
     
     /**
@@ -56,7 +59,7 @@ class FoodItemTableViewCell: UITableViewCell {
         proteinTextField.addTarget(self, action: #selector(changeFoodItemProtein(_:)), for: .editingChanged)
         carbsTextField.addTarget(self, action: #selector(changeFoodItemCarbs(_:)), for: .editingChanged)
         fatsTextField.addTarget(self, action: #selector(changeFoodItemFats(_:)), for: .editingChanged)
-    
+        
         proteinTextField.addTarget(self, action: #selector(updateFoodItemProteinTextField(_:)), for: .editingDidEnd)
         carbsTextField.addTarget(self, action: #selector(updateFoodItemCarbsTextField(_:)), for: .editingDidEnd)
         fatsTextField.addTarget(self, action: #selector(updateFoodItemFatsTextField(_:)), for: .editingDidEnd)
@@ -72,9 +75,9 @@ class FoodItemTableViewCell: UITableViewCell {
     }
     
     /**
-    This method
-    Saves the protein the user inputed in the "FoodItem"
-    */
+     This method
+     Saves the protein the user inputed in the "FoodItem"
+     */
     @objc func changeFoodItemProtein(_ sender:UITextField){
         if let protein = sender.text{
             foodItem?.protein = Int16(protein) ?? 0
@@ -82,9 +85,9 @@ class FoodItemTableViewCell: UITableViewCell {
         }
     }
     /**
-    This method
-    Saves the carbs the user inputed in the "FoodItem"
-    */
+     This method
+     Saves the carbs the user inputed in the "FoodItem"
+     */
     @objc func changeFoodItemCarbs(_ sender:UITextField){
         if let carbs = sender.text{
             foodItem?.carbs = Int16(carbs) ?? 0
@@ -92,9 +95,9 @@ class FoodItemTableViewCell: UITableViewCell {
         }
     }
     /**
-    This method
-    Saves the name the fats inputed in the "FoodItem"
-    */
+     This method
+     Saves the name the fats inputed in the "FoodItem"
+     */
     @objc func changeFoodItemFats(_ sender:UITextField){
         if let fats = sender.text{
             foodItem?.fats = Int16(fats) ?? 0
@@ -113,6 +116,22 @@ class FoodItemTableViewCell: UITableViewCell {
     @objc func updateFoodItemFatsTextField(_ sender:UITextField){
         fatsTextField.text = "F: \(foodItem?.fats ?? 0)"
         caloriesLabel.text = "CAL: \(foodItem?.calculatedOverallCalories ?? 0)"
+    }
+    
+    func choosePic(lastImageNumChosen:Int) -> Int{
+        
+        if(!didSet){
+            var imageNum = Int.random(in: 1...10)
+            while(imageNum == lastImageNumChosen){
+                imageNum = Int.random(in: 1...10)
+            }
+            backroundImage.image = UIImage(named: "mealPic\(imageNum)")
+            backroundImage.layer.cornerRadius = 20.0
+            backroundImage.clipsToBounds = true
+            didSet = true
+            return imageNum
+        }
+        return 1
     }
     
 }

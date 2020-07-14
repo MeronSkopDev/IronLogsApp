@@ -13,6 +13,9 @@ class SingleExerciseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var exerciseNameLabel: UILabel!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    var didSet = false
+    
     /**
     This method
     Inserts given exerciseName into exerciseNameLabel
@@ -21,4 +24,18 @@ class SingleExerciseTableViewCell: UITableViewCell {
         exerciseNameLabel.text = exerciseName
     }
     
+    func choosePic(lastImageNumChosen:Int) -> Int{
+        if(!didSet){
+            var imageNum = Int.random(in: 1...10)
+            while(imageNum == lastImageNumChosen){
+                imageNum = Int.random(in: 1...10)
+            }
+            backgroundImage.image = UIImage(named: "gymPic\(imageNum)")
+            backgroundImage.layer.cornerRadius = 20.0
+            backgroundImage.clipsToBounds = true
+            self.didSet = true
+            return imageNum
+        }
+        return 1
+    }
 }

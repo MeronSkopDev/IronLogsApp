@@ -13,6 +13,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wYz-zJ-Y7O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <prototypes>
@@ -23,28 +25,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-YI-2Ow">
-                                            <rect key="frame" x="28" y="19" width="42" height="49"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qci-yy-JjI">
+                                            <rect key="frame" x="8" y="8" width="398" height="100"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-YI-2Ow">
+                                            <rect key="frame" x="28" y="19" width="32.5" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="5SW-vb-ZW8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                            <color key="textColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="-2"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-JN-77J">
-                                            <rect key="frame" x="28" y="76" width="34.5" height="21"/>
+                                            <rect key="frame" x="28" y="67" width="35.5" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="-1" height="-2"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="qci-yy-JjI" firstAttribute="top" secondItem="VFA-gd-adL" secondAttribute="top" constant="8" id="9cP-Vc-viL"/>
+                                        <constraint firstItem="qci-yy-JjI" firstAttribute="leading" secondItem="VFA-gd-adL" secondAttribute="leading" constant="8" id="CwL-aY-daQ"/>
                                         <constraint firstItem="ywl-YI-2Ow" firstAttribute="leading" secondItem="VFA-gd-adL" secondAttribute="leadingMargin" constant="8" id="KU5-ye-LhO"/>
+                                        <constraint firstAttribute="bottom" secondItem="qci-yy-JjI" secondAttribute="bottom" constant="8" id="Skk-yX-KUT"/>
                                         <constraint firstItem="ywl-YI-2Ow" firstAttribute="top" secondItem="VFA-gd-adL" secondAttribute="topMargin" constant="8" id="ZtB-Xu-Ftx"/>
                                         <constraint firstItem="fjx-JN-77J" firstAttribute="leading" secondItem="VFA-gd-adL" secondAttribute="leadingMargin" constant="8" id="cUt-jP-oxg"/>
                                         <constraint firstItem="fjx-JN-77J" firstAttribute="top" secondItem="ywl-YI-2Ow" secondAttribute="bottom" constant="8" id="eK1-3h-T6c"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="fjx-JN-77J" secondAttribute="bottom" constant="8" id="jZx-lT-ubK"/>
+                                        <constraint firstAttribute="trailing" secondItem="qci-yy-JjI" secondAttribute="trailing" constant="8" id="juv-8G-3uk"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="backroundImage" destination="qci-yy-JjI" id="sy2-KT-ybO"/>
                                     <outlet property="dateLabel" destination="fjx-JN-77J" id="z7G-zv-RRK"/>
                                     <outlet property="titleLabel" destination="ywl-YI-2Ow" id="7Lx-VY-LJ9"/>
                                 </connections>
@@ -90,7 +108,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="inc-dt-UqJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="l0K-D5-dC6">
@@ -136,6 +154,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XZe-l4-9u7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d0k-Qo-jC0">

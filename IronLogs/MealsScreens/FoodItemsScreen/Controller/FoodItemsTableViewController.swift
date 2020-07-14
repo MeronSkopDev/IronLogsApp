@@ -13,6 +13,8 @@ class FoodItemsTableViewController: UITableViewController {
     var currentDayOfEating:DayOfEating?
     let mViewModel = FoodItemsTableViewModel()
     
+    var lastImageNumChosen = 1
+    
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
@@ -52,7 +54,6 @@ class FoodItemsTableViewController: UITableViewController {
         if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "macrosCell", for: indexPath) as! MacrosTableViewCell
             cell.populateCell(dayOfEating: currentDayOfEating)
-            //MARK: Update this cell when the user changes the "FoodIten" cell values
             return cell
         }
         
@@ -64,6 +65,9 @@ class FoodItemsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "foodItemCell") as! FoodItemTableViewCell
             cell.initObservers()
             cell.populateCell(foodItem: currentFoodItem)
+            
+            lastImageNumChosen = cell.choosePic(lastImageNumChosen: lastImageNumChosen)
+            
             return cell
         }
         return cell

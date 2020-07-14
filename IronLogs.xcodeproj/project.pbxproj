@@ -12,7 +12,6 @@
 		1F03606C246F98AC005A588C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F03606B246F98AC005A588C /* ViewController.swift */; };
 		1F03606F246F98AC005A588C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F03606D246F98AC005A588C /* Login.storyboard */; };
 		1F036072246F98AC005A588C /* IronLogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F036070246F98AC005A588C /* IronLogs.xcdatamodeld */; };
-		1F036074246F98B5005A588C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F036073246F98B5005A588C /* Assets.xcassets */; };
 		1F036077246F98B5005A588C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F036075246F98B5005A588C /* LaunchScreen.storyboard */; };
 		1F036080246F9B00005A588C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F03607F246F9B00005A588C /* GoogleService-Info.plist */; };
 		1F036083246F9B44005A588C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F036082246F9B44005A588C /* LogInViewController.swift */; };
@@ -70,6 +69,7 @@
 		1F7172BA247BE6CF00997523 /* RecepieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7172B9247BE6CF00997523 /* RecepieTableViewController.swift */; };
 		1F7172BF247BE89300997523 /* RecepieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7172BD247BE89300997523 /* RecepieTableViewCell.swift */; };
 		1F7172C0247BE89300997523 /* RecepieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F7172BE247BE89300997523 /* RecepieTableViewCell.xib */; };
+		1F9B9CBE24BD7B44007A3923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9B9CBD24BD7B44007A3923 /* Assets.xcassets */; };
 		1FB44AD8248E8F28002BE17A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB44AD6248E8F28002BE17A /* SearchTableViewCell.swift */; };
 		1FB44AD9248E8F28002BE17A /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */; };
 		1FB44ADC248E9327002BE17A /* RecepieTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */; };
@@ -86,7 +86,6 @@
 		1F03606B246F98AC005A588C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F03606E246F98AC005A588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		1F036071246F98AC005A588C /* IronLogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IronLogs.xcdatamodel; sourceTree = "<group>"; };
-		1F036073246F98B5005A588C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F036076246F98B5005A588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F036078246F98B5005A588C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F03607F246F9B00005A588C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		1F7172B9247BE6CF00997523 /* RecepieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewController.swift; sourceTree = "<group>"; };
 		1F7172BD247BE89300997523 /* RecepieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewCell.swift; sourceTree = "<group>"; };
 		1F7172BE247BE89300997523 /* RecepieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepieTableViewCell.xib; sourceTree = "<group>"; };
+		1F9B9CBD24BD7B44007A3923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FB44AD6248E8F28002BE17A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		1FB44AD7248E8F28002BE17A /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		1FB44ADB248E9327002BE17A /* RecepieTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepieTableViewModel.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 				1F036069246F98AC005A588C /* SceneDelegate.swift */,
 				1F036067246F98AC005A588C /* AppDelegate.swift */,
 				1F03606B246F98AC005A588C /* ViewController.swift */,
-				1F036073246F98B5005A588C /* Assets.xcassets */,
+				1F9B9CBD24BD7B44007A3923 /* Assets.xcassets */,
 				1F036075246F98B5005A588C /* LaunchScreen.storyboard */,
 				1F036078246F98B5005A588C /* Info.plist */,
 				1F03607F246F9B00005A588C /* GoogleService-Info.plist */,
@@ -715,13 +715,13 @@
 				1F0360E024716F7F005A588C /* SuperSetTableViewCell.xib in Resources */,
 				1F5B97672477AD1100F3428A /* FoodItemTableViewCell.xib in Resources */,
 				1F03609F247165EF005A588C /* Workouts.storyboard in Resources */,
+				1F9B9CBE24BD7B44007A3923 /* Assets.xcassets in Resources */,
 				1F0360F02472085F005A588C /* Meals.storyboard in Resources */,
 				1FB44AD9248E8F28002BE17A /* SearchTableViewCell.xib in Resources */,
 				1F036080246F9B00005A588C /* GoogleService-Info.plist in Resources */,
 				1F03610D24734640005A588C /* DayOfEatingTitleTableViewCell.xib in Resources */,
 				1F7172C0247BE89300997523 /* RecepieTableViewCell.xib in Resources */,
 				1F03611124734ABD005A588C /* MacrosTableViewCell.xib in Resources */,
-				1F036074246F98B5005A588C /* Assets.xcassets in Resources */,
 				1F0360C524716D63005A588C /* SingleExerciseTableViewCell.xib in Resources */,
 				1F0360C424716D63005A588C /* WorkoutTitleTableViewCell.xib in Resources */,
 				1F03606F246F98AC005A588C /* Login.storyboard in Resources */,

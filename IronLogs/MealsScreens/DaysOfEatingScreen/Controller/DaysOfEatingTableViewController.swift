@@ -15,6 +15,8 @@ class DaysOfEatingTableViewController: UITableViewController {
     
     let mViewModel = DayOfEatingTableViewModel()
     
+    var lastImageNumChosen = 1
+    
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         
@@ -67,6 +69,10 @@ class DaysOfEatingTableViewController: UITableViewController {
         if let cell = cell as? DayOfEatingTableViewCell{
             let dayOfEating = fetch.object(at: indexPath)
             cell.populateCell(dayOfEating: dayOfEating)
+            
+            lastImageNumChosen = cell.choosePic(lastImageNumChosen: lastImageNumChosen)
+            
+            
         }
         
         return cell

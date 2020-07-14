@@ -30,17 +30,11 @@
                                 <rect key="frame" x="60" y="33" width="323" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Exercise Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-Zi-zPK">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="60"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbm-8a-MM6">
-                                        <rect key="frame" x="0.0" y="56" width="323" height="4"/>
-                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="4" id="Q3w-Sh-WEP"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Fjk-dQ-heu"/>
@@ -56,6 +50,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="dT3-rC-Mie" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="I41-w4-3Ej"/>
                     <constraint firstAttribute="bottom" secondItem="dT3-rC-Mie" secondAttribute="bottom" constant="8" id="Rvu-gE-zoP"/>

@@ -124,12 +124,12 @@ class HomeViewController: UIViewController {
                 if(hamburgerIcon.center.x < 100){
                 hamburgerIcon.center = CGPoint(x: hamburgerIcon.center.x + dx, y: hamburgerIcon.center.y)
                 }
-                hamburgerIcon.alpha = 1 - dx - 0.3
+                hamburgerIcon.alpha = 0.9 - dx - 0.3
             }
             
             if(direction == "right"){
                 let dx = (sender.location(in:view).x) / 400
-                workoutImage.alpha = 1 - dx + 0.2
+                workoutImage.alpha = 0.9 - dx + 0.2
                 
                 if(barbellIcon.center.x > 40){
                 barbellIcon.center = CGPoint(x: barbellIcon.center.x - dx, y: barbellIcon.center.y)

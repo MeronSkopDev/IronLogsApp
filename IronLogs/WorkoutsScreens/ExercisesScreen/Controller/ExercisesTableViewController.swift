@@ -13,6 +13,8 @@ class ExercisesTableViewController: UITableViewController {
     var workoutIndex:Int?
     let mViewModel = ExercisesTableViewModel()
     
+    var lastImageNumChosen = 1
+    
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
@@ -62,7 +64,7 @@ class ExercisesTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "singleExerciseNib", for: indexPath) as! SingleExerciseTableViewCell
             if let exerciseName = currentExercise.exerciseName {
                 cell.initCell(exerciseName: exerciseName)
-                
+                lastImageNumChosen = cell.choosePic(lastImageNumChosen: lastImageNumChosen)
             }
             return cell
         }

@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sS5-4n-HIZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayOfEatingCell" rowHeight="112" id="ugn-cQ-acU" customClass="DayOfEatingTableViewCell" customModule="IronLogs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="112"/>
@@ -23,59 +23,83 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n3S-Ss-NRi">
+                                            <rect key="frame" x="8" y="8" width="398" height="96"/>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-rY-0I7">
-                                            <rect key="frame" x="20" y="44" width="284.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="42" width="288.5" height="22.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kg-Fw-cQY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="63.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-2"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41I-Qb-YN2">
-                                                    <rect key="frame" x="92.5" y="0.0" width="54.5" height="20.5"/>
+                                                    <rect key="frame" x="93.5" y="0.0" width="55.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-2"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChX-Jr-vQN">
-                                                    <rect key="frame" x="177" y="0.0" width="45.5" height="20.5"/>
+                                                    <rect key="frame" x="179" y="0.0" width="46.5" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-2"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F28-aL-Tau">
-                                                    <rect key="frame" x="252.5" y="0.0" width="32" height="20.5"/>
+                                                    <rect key="frame" x="255.5" y="0.0" width="33" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-1" height="-2"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvc-YW-VIN">
-                                            <rect key="frame" x="20" y="11" width="38" height="25"/>
+                                            <rect key="frame" x="20" y="11" width="39" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="1" height="-2"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="DateOFCreation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51q-rm-xYW">
-                                            <rect key="frame" x="20" y="72.5" width="123" height="20.5"/>
+                                            <rect key="frame" x="20" y="72.5" width="124" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20.5" id="t6R-Kt-EeA"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="shadowOffset" width="-1" height="-2"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="51q-rm-xYW" secondAttribute="bottom" constant="8" id="4Zk-cb-D8w"/>
                                         <constraint firstItem="Pk8-rY-0I7" firstAttribute="top" secondItem="Rvc-YW-VIN" secondAttribute="bottom" constant="8" id="7Bz-lN-fvb"/>
+                                        <constraint firstItem="n3S-Ss-NRi" firstAttribute="centerX" secondItem="2M3-U3-TeM" secondAttribute="centerX" id="HJa-cI-D2n"/>
                                         <constraint firstItem="Rvc-YW-VIN" firstAttribute="leading" secondItem="2M3-U3-TeM" secondAttribute="leadingMargin" id="M5q-XY-S6T"/>
                                         <constraint firstItem="51q-rm-xYW" firstAttribute="leading" secondItem="2M3-U3-TeM" secondAttribute="leadingMargin" id="Q5R-l2-37Y"/>
                                         <constraint firstItem="51q-rm-xYW" firstAttribute="top" secondItem="Pk8-rY-0I7" secondAttribute="bottom" constant="8" id="QaS-45-OUu"/>
+                                        <constraint firstItem="n3S-Ss-NRi" firstAttribute="leading" secondItem="2M3-U3-TeM" secondAttribute="leading" constant="8" id="Tz5-SP-fnH"/>
                                         <constraint firstItem="Rvc-YW-VIN" firstAttribute="top" secondItem="2M3-U3-TeM" secondAttribute="topMargin" id="hzc-gD-HnN"/>
+                                        <constraint firstItem="n3S-Ss-NRi" firstAttribute="top" secondItem="2M3-U3-TeM" secondAttribute="top" constant="8" id="iKh-yl-3YU"/>
+                                        <constraint firstAttribute="bottom" secondItem="n3S-Ss-NRi" secondAttribute="bottom" constant="8" id="ptd-yF-PhF"/>
                                         <constraint firstItem="Pk8-rY-0I7" firstAttribute="leading" secondItem="2M3-U3-TeM" secondAttribute="leadingMargin" id="pyC-Me-7Yb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="backroundImage" destination="n3S-Ss-NRi" id="2kC-Cg-AYZ"/>
                                     <outlet property="caloriesLabel" destination="2kg-Fw-cQY" id="jXX-cY-Vfc"/>
                                     <outlet property="carbsLabel" destination="ChX-Jr-vQN" id="4MD-9z-yFF"/>
                                     <outlet property="dateOfCreationLabel" destination="51q-rm-xYW" id="UcF-vG-wbA"/>
@@ -117,7 +141,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uGA-zN-o6F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="D8T-TG-OWx">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -162,7 +186,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CBj-E5-IUf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x8p-BY-jdF">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>

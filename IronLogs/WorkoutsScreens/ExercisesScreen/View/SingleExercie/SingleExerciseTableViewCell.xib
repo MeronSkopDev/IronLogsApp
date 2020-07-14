@@ -9,35 +9,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="singleExerciseNib" rowHeight="50" id="KGk-i7-Jjw" customClass="SingleExerciseTableViewCell" customModule="__4_2020LoginAndSaveToRealTimeDatabase" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="0.0" reuseIdentifier="singleExerciseNib" rowHeight="125" id="KGk-i7-Jjw" customClass="SingleExerciseTableViewCell" customModule="IronLogs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyT-pA-zKm">
-                        <rect key="frame" x="0.0" y="0.0" width="213" height="50"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-vh-OL5">
+                        <rect key="frame" x="8" y="8" width="304" height="114"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="mtN-ox-fFk"/>
+                            <constraint firstAttribute="height" constant="114" id="Ltg-XK-WNa"/>
                         </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyT-pA-zKm">
+                        <rect key="frame" x="127.5" y="51" width="65" height="22.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="-1" height="-2"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="VyT-pA-zKm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BXW-ek-cMi"/>
-                    <constraint firstItem="VyT-pA-zKm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UB1-D0-mVa"/>
-                    <constraint firstAttribute="bottom" secondItem="VyT-pA-zKm" secondAttribute="bottom" id="gX7-hh-kMU"/>
-                    <constraint firstAttribute="trailing" secondItem="VyT-pA-zKm" secondAttribute="trailing" constant="80" id="glR-lH-Cmi"/>
+                    <constraint firstItem="VyT-pA-zKm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="51" id="9U0-ic-vtF"/>
+                    <constraint firstAttribute="bottom" secondItem="cf9-vh-OL5" secondAttribute="bottom" constant="8" id="CYS-EP-Sbn"/>
+                    <constraint firstItem="cf9-vh-OL5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="V3Z-Gl-joD"/>
+                    <constraint firstItem="VyT-pA-zKm" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Vfe-Tq-Gmw"/>
+                    <constraint firstAttribute="bottom" secondItem="VyT-pA-zKm" secondAttribute="bottom" constant="51" id="Wtx-wI-5s5"/>
+                    <constraint firstItem="cf9-vh-OL5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="XgQ-JU-OC4"/>
+                    <constraint firstAttribute="trailing" secondItem="cf9-vh-OL5" secondAttribute="trailing" constant="8" id="fXX-mS-JDe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backgroundImage" destination="cf9-vh-OL5" id="LZb-IV-uf6"/>
                 <outlet property="exerciseNameLabel" destination="VyT-pA-zKm" id="Zy5-EB-bGk"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+            <point key="canvasLocation" x="137.68115942028987" y="53.90625"/>
         </tableViewCell>
     </objects>
 </document>

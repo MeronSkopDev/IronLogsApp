@@ -13,6 +13,8 @@ class WorkoutsTableViewController: UITableViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    var lastImageNumChosen = 1
+    
     override func viewDidAppear(_ animated: Bool) {
         WorkoutsInUse.loadData()
         /**
@@ -55,6 +57,7 @@ class WorkoutsTableViewController: UITableViewController {
         if let cell = cell as? WorkoutsTableViewCell{
             
             cell.updateCell(workoutDetails: currentWorkout.workoutDetails)
+            lastImageNumChosen = cell.choosePic(lastImageNumChosen: lastImageNumChosen)
         }
         
         return cell
