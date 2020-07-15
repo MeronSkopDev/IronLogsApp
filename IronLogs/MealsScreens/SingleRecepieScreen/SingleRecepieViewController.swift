@@ -176,8 +176,9 @@ class SingleRecepieViewController: UIViewController {
     }
     
     func choosePic(){
-        let imageNum = Int.random(in: 1...5)
+        let imageNum = Int.random(in: 1...4)
         backgroundImage.image = UIImage(named: "tableTop\(imageNum)")
+        backgroundImage.alpha = 0.8
     }
     
 }

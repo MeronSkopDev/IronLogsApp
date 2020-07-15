@@ -14,9 +14,9 @@ class RegularSetTableViewCell: UITableViewCell {
     
     @IBOutlet weak var repsEditText: UITextField!
     
-    var cellSetIndex:Int?
-    
     @IBOutlet weak var backgroundImage: UIImageView!
+    
+    var cellSetIndex:Int?
     
     var currentSet:Workout.Exercise.Set?
     
@@ -29,7 +29,16 @@ class RegularSetTableViewCell: UITableViewCell {
         self.currentSet = currentSet
         weightEditText.text = "\(currentSet.weight)"
         repsEditText.text = "\(currentSet.reps)"
+        
+        choosePic()
     }
+    
+    func choosePic(){
+        backgroundImage.image = UIImage(named: "regularSetBack")
+        backgroundImage.layer.cornerRadius = 20.0
+        backgroundImage.clipsToBounds = true
+    }
+    
     
     /**
      This method
@@ -62,6 +71,7 @@ class RegularSetTableViewCell: UITableViewCell {
             currentSet?.reps = Int(reps) ?? 0
         }
     }
+    
     
     
     

@@ -17,17 +17,22 @@ class DaysOfEatingTableViewController: UITableViewController {
     
     var lastImageNumChosen = 1
     
+    
+    
+    
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
         
-        ///This predicate makes sure that each user only sees his own DaysOfEating
-        let arg = (Auth.auth().currentUser?.uid ?? "")
-        request.predicate = NSPredicate(format: "uuid == %@", arg)
+        
+        
         
         request.sortDescriptors = [
             NSSortDescriptor(key: "dateOfCreation", ascending: true)
-            
         ]
+        
+        let arg = (Auth.auth().currentUser?.uid ?? "")
+        ///This predicate makes sure that each user only sees his own DaysOfEating
+        request.predicate = NSPredicate(format: "uuid == %@", arg)
         
         let context = CM.shared.context
         

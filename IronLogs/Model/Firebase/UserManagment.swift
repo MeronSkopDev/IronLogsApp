@@ -8,10 +8,8 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
-struct UM{
-    
-}
 
 protocol UserValidationLogIn {
     var emailTextField:UITextField!{get}

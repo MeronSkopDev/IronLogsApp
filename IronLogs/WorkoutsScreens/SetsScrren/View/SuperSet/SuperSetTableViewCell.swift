@@ -23,7 +23,9 @@ class SuperSetTableViewCell: UITableViewCell {
     
     @IBOutlet weak var superExerciseNameEditText: UITextField!
     
-    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    @IBOutlet weak var backgroungImage: UIImageView!
+    
     
     var currentSet:Workout.Exercise.Set?
     
@@ -35,6 +37,14 @@ class SuperSetTableViewCell: UITableViewCell {
         superExerciseNameEditText.text = currentSet.superName
         superExerciseRepsEditText.text = "\(currentSet.superReps ?? 0)"
         superExerciseWeightEditText.text = "\(currentSet.superWeight ?? 0)"
+        
+        choosePic()
+    }
+    
+    func choosePic(){
+        backgroungImage.image = UIImage(named: "superSetBack")
+        backgroungImage.layer.cornerRadius = 20.0
+        backgroungImage.clipsToBounds = true
     }
     
     var delegate:SuperSetDelegate?

@@ -9,18 +9,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="regularSetNib" rowHeight="64" id="KGk-i7-Jjw" customClass="RegularSetTableViewCell" customModule="IronLogs" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="regularSetNib" rowHeight="114" id="KGk-i7-Jjw" customClass="RegularSetTableViewCell" customModule="IronLogs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="397" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7y-Cb-a4O">
-                        <rect key="frame" x="8" y="8" width="288" height="46"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lhn-Zw-XoO">
+                        <rect key="frame" x="8" y="8" width="381" height="98"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="vqp-6Z-ebz"/>
+                        </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-jB-a7g">
-                        <rect key="frame" x="16" y="16" width="272" height="30"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-jB-a7g">
+                        <rect key="frame" x="50.5" y="42" width="296" height="30"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qBk-gn-KYU">
                                 <rect key="frame" x="0.0" y="0.0" width="132" height="30"/>
@@ -44,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vv9-e8-Oco">
-                                <rect key="frame" x="140" y="0.0" width="132" height="30"/>
+                                <rect key="frame" x="164" y="0.0" width="132" height="30"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-dumbbell-1" translatesAutoresizingMaskIntoConstraints="NO" id="jpO-dU-lLI">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -69,23 +72,22 @@
                 </subviews>
                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="H7y-Cb-a4O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2y4-gw-Jqd"/>
-                    <constraint firstAttribute="bottom" secondItem="H7y-Cb-a4O" secondAttribute="bottom" constant="8" id="5rf-4I-TUm"/>
-                    <constraint firstAttribute="trailing" secondItem="H7y-Cb-a4O" secondAttribute="trailing" constant="8" id="72z-Dy-dcb"/>
-                    <constraint firstItem="HCg-jB-a7g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="8Jq-75-F7p"/>
-                    <constraint firstItem="H7y-Cb-a4O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="9Sl-of-Slt"/>
-                    <constraint firstAttribute="trailing" secondItem="HCg-jB-a7g" secondAttribute="trailing" constant="16" id="Ckg-2h-vjB"/>
-                    <constraint firstAttribute="bottom" secondItem="HCg-jB-a7g" secondAttribute="bottom" constant="16" id="G7H-ZA-C3o"/>
-                    <constraint firstItem="HCg-jB-a7g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bz4-ON-3yQ"/>
+                    <constraint firstAttribute="bottom" secondItem="Lhn-Zw-XoO" secondAttribute="bottom" constant="8" id="1kZ-uS-TfH"/>
+                    <constraint firstItem="HCg-jB-a7g" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7tJ-gV-CUK"/>
+                    <constraint firstItem="HCg-jB-a7g" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Chs-aU-aIY"/>
+                    <constraint firstAttribute="trailing" secondItem="Lhn-Zw-XoO" secondAttribute="trailing" constant="8" id="FR6-1K-srg"/>
+                    <constraint firstItem="HCg-jB-a7g" firstAttribute="centerY" secondItem="Lhn-Zw-XoO" secondAttribute="centerY" id="WH1-sd-8UC"/>
+                    <constraint firstItem="Lhn-Zw-XoO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="f59-ps-qFB"/>
+                    <constraint firstItem="Lhn-Zw-XoO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="hq8-Fj-M0I"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="backgroundImage" destination="H7y-Cb-a4O" id="76u-pC-g6M"/>
+                <outlet property="backgroundImage" destination="Lhn-Zw-XoO" id="ClE-G4-Ge1"/>
                 <outlet property="repsEditText" destination="6gE-y5-GPv" id="0SS-vs-Elc"/>
                 <outlet property="weightEditText" destination="Jsl-CO-T2R" id="1f7-qL-LL1"/>
             </connections>
-            <point key="canvasLocation" x="63.768115942028992" y="-14.732142857142856"/>
+            <point key="canvasLocation" x="129.71014492753625" y="-29.464285714285712"/>
         </tableViewCell>
     </objects>
     <resources>

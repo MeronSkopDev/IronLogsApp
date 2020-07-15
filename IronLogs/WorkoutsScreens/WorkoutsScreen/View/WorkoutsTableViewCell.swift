@@ -15,7 +15,6 @@ class WorkoutsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var backroundImage: UIImageView!
     
-    var lastImageNumChosen:Int!
     var didSet = false
     
     /**

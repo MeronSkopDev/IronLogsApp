@@ -75,7 +75,6 @@ class SetsTableViewController: UITableViewController {
                             let cell = tableView.dequeueReusableCell(withIdentifier: "regularSetNib", for: indexPath) as! RegularSetTableViewCell
                             cell.initCell(currentSet: currentSet)
                             cell.initTextObserver()
-                            
                             return cell
                             
                         case Workout.Exercise.Set.SetType.superSet:
