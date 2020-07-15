@@ -19,11 +19,11 @@
                                 <rect key="frame" x="207" y="88" width="207" height="808"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barbell" translatesAutoresizingMaskIntoConstraints="NO" id="C7o-Ny-wh7">
-                                <rect key="frame" x="207" y="88" width="207" height="774"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeScreenGymSide" translatesAutoresizingMaskIntoConstraints="NO" id="C7o-Ny-wh7">
+                                <rect key="frame" x="207" y="88" width="207" height="808"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panckace" translatesAutoresizingMaskIntoConstraints="NO" id="LZJ-ix-oOh">
-                                <rect key="frame" x="0.0" y="88" width="207" height="774"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeScreenFoodSide" translatesAutoresizingMaskIntoConstraints="NO" id="LZJ-ix-oOh">
+                                <rect key="frame" x="0.0" y="88" width="207" height="808"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJi-5j-jvk">
                                 <rect key="frame" x="8" y="104" width="398" height="35"/>
@@ -108,20 +108,20 @@
                             <constraint firstItem="C7o-Ny-wh7" firstAttribute="leading" secondItem="maD-OF-E6R" secondAttribute="leading" constant="207" id="9an-2p-jz1"/>
                             <constraint firstItem="kJi-5j-jvk" firstAttribute="leading" secondItem="maD-OF-E6R" secondAttribute="leading" constant="8" id="CCo-Xk-rgw"/>
                             <constraint firstItem="C7o-Ny-wh7" firstAttribute="trailing" secondItem="maD-OF-E6R" secondAttribute="trailing" id="PjF-3K-GvT"/>
-                            <constraint firstItem="C7o-Ny-wh7" firstAttribute="bottom" secondItem="maD-OF-E6R" secondAttribute="bottom" id="bHY-du-lWB"/>
                             <constraint firstItem="LZJ-ix-oOh" firstAttribute="leading" secondItem="HZX-Sd-EZ3" secondAttribute="leading" id="bJ0-Mv-31t"/>
                             <constraint firstItem="kJi-5j-jvk" firstAttribute="top" secondItem="maD-OF-E6R" secondAttribute="top" constant="16" id="c8z-np-EC4"/>
                             <constraint firstItem="Lgh-0e-78A" firstAttribute="top" secondItem="kJi-5j-jvk" secondAttribute="bottom" constant="8" id="dm3-cr-CGz"/>
                             <constraint firstItem="UWI-MA-W21" firstAttribute="centerY" secondItem="HZX-Sd-EZ3" secondAttribute="centerY" id="fID-fk-cjz"/>
                             <constraint firstItem="uiu-mV-WCH" firstAttribute="leading" secondItem="C7o-Ny-wh7" secondAttribute="leading" id="hcE-59-xVZ"/>
                             <constraint firstItem="C7o-Ny-wh7" firstAttribute="top" secondItem="maD-OF-E6R" secondAttribute="top" id="jP8-Xf-n6J"/>
+                            <constraint firstAttribute="bottom" secondItem="LZJ-ix-oOh" secondAttribute="bottom" id="nGr-dq-0Qb"/>
                             <constraint firstItem="maD-OF-E6R" firstAttribute="trailing" secondItem="LZJ-ix-oOh" secondAttribute="trailing" constant="207" id="nzn-BG-DY5"/>
                             <constraint firstItem="maD-OF-E6R" firstAttribute="trailing" secondItem="V8k-f7-bN3" secondAttribute="trailing" constant="16" id="oba-dr-Q5S"/>
                             <constraint firstItem="UWI-MA-W21" firstAttribute="leading" secondItem="maD-OF-E6R" secondAttribute="leading" constant="16" id="p5h-vY-vBa"/>
                             <constraint firstItem="LZJ-ix-oOh" firstAttribute="top" secondItem="maD-OF-E6R" secondAttribute="top" id="qAp-xb-4Ex"/>
                             <constraint firstItem="Lgh-0e-78A" firstAttribute="centerX" secondItem="HZX-Sd-EZ3" secondAttribute="centerX" id="uo4-Uj-QtH"/>
+                            <constraint firstAttribute="bottom" secondItem="C7o-Ny-wh7" secondAttribute="bottom" id="use-5v-8F4"/>
                             <constraint firstAttribute="bottom" secondItem="uiu-mV-WCH" secondAttribute="bottom" id="xay-bq-g5w"/>
-                            <constraint firstItem="maD-OF-E6R" firstAttribute="bottom" secondItem="LZJ-ix-oOh" secondAttribute="bottom" id="xgz-io-Qkt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="maD-OF-E6R"/>
                     </view>
@@ -168,11 +168,11 @@
     <resources>
         <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
         <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
-        <image name="barbell" width="720" height="1280"/>
+        <image name="homeScreenFoodSide" width="207" height="808"/>
+        <image name="homeScreenGymSide" width="207" height="808"/>
         <image name="icons8-barbell-2" width="100" height="100"/>
         <image name="icons8-cheeseburger" width="100" height="100"/>
         <image name="icons8-triceps-2" width="96" height="96"/>
         <image name="icons8-triceps-3" width="96" height="96"/>
-        <image name="panckace" width="152" height="331"/>
     </resources>
 </document>
