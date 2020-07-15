@@ -15,7 +15,7 @@
 ***Workout documenting***
 >Here you can document you workouts
 
-[![Workouts](https://i.imgur.com/SbcPR6q.png?1)]() [![Exercises](https://i.imgur.com/ToaAL3j.png?1)]() [![Sets](https://i.imgur.com/ztDqtoJ.png?1)]()
+[![Workouts](https://i.imgur.com/SbcPR6q.png?1)]() [![Exercises](https://i.imgur.com/ToaAL3j.png?1)]() [![Sets](https://i.imgur.com/zDkSBsO.png?1)]()
 
 **Credit**
 
