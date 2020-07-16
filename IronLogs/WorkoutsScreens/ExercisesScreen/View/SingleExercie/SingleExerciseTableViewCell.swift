@@ -26,15 +26,12 @@ class SingleExerciseTableViewCell: UITableViewCell {
     
     func choosePic(lastImageNumChosen:Int) -> Int{
         if(!didSet){
-            var imageNum = Int.random(in: 1...10)
-            while(imageNum == lastImageNumChosen){
-                imageNum = Int.random(in: 1...10)
-            }
-            backgroundImage.image = UIImage(named: "gymPic\(imageNum)")
-            backgroundImage.layer.cornerRadius = 20.0
-            backgroundImage.clipsToBounds = true
-            self.didSet = true
-            return imageNum
+            didSet = !didSet
+            return  ImageLoading.choosePic(
+                lastImageNumChosen: lastImageNumChosen,
+                imageView: backgroundImage,
+                lastImageNum: 10,
+                imageName: "gymPic")
         }
         return 1
     }

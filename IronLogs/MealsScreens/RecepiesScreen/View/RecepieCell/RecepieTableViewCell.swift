@@ -35,15 +35,12 @@ class RecepieTableViewCell: UITableViewCell {
     
     func choosePic(lastImageNumChosen:Int) -> Int{
         if(!didSet){
-            var imageNum = Int.random(in: 1...12)
-            while(imageNum == lastImageNumChosen){
-                imageNum = Int.random(in: 1...12)
-            }
-            backgroundImage.image = UIImage(named: "table\(imageNum)")
-            backgroundImage.layer.cornerRadius = 20.0
-            backgroundImage.clipsToBounds = true
-            self.didSet = true
-            return imageNum
+            didSet = !didSet
+            return  ImageLoading.choosePic(
+                lastImageNumChosen: lastImageNumChosen,
+                imageView: backgroundImage,
+                lastImageNum: 10,
+                imageName: "table")
         }
         return 1
     }

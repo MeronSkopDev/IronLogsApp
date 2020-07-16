@@ -46,6 +46,7 @@ class RecepieTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell",for: indexPath) as! SearchTableViewCell
+        cell.initCellUI()
         
         cell.queryDelegate = self
         

@@ -32,15 +32,12 @@ class WorkoutsTableViewCell: UITableViewCell {
     
     func choosePic(lastImageNumChosen:Int) -> Int{
         if(!didSet){
-            var imageNum = Int.random(in: 1...10)
-            while(imageNum == lastImageNumChosen){
-                imageNum = Int.random(in: 1...10)
-            }
-            backroundImage.image = UIImage(named: "gymPic\(imageNum)")
-            backroundImage.layer.cornerRadius = 20.0
-            backroundImage.clipsToBounds = true
-            self.didSet = true
-            return imageNum
+            didSet = !didSet
+            return  ImageLoading.choosePic(
+                lastImageNumChosen: lastImageNumChosen,
+                imageView: backroundImage,
+                lastImageNum: 10,
+                imageName: "gymPic")
         }
         return 1
     }

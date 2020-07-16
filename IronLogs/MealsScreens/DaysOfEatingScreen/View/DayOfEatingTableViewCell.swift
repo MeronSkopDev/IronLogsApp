@@ -53,15 +53,12 @@ class DayOfEatingTableViewCell: UITableViewCell {
     
     func choosePic(lastImageNumChosen:Int) -> Int{
         if(!didSet){
-            var imageNum = Int.random(in: 1...10)
-            while(imageNum == lastImageNumChosen){
-                imageNum = Int.random(in: 1...10)
-            }
-            backroundImage.image = UIImage(named: "mealPic\(imageNum)")
-            backroundImage.layer.cornerRadius = 20.0
-            backroundImage.clipsToBounds = true
-            didSet = true
-            return imageNum
+            didSet = !didSet
+            return  ImageLoading.choosePic(
+                lastImageNumChosen: lastImageNumChosen,
+                imageView: backroundImage,
+                lastImageNum: 10,
+                imageName: "mealPic")
         }
         return 1
     }

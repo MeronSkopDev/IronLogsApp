@@ -35,6 +35,10 @@ class SingleRecepieViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    
+    @IBOutlet weak var toRecepieButton: UIButton!
+    @IBOutlet weak var addMealButton: UIButton!
+    
     var currentDayOfEating:DayOfEating?
     var recepie:APIFoodItem?
     var url:String?
@@ -52,6 +56,7 @@ class SingleRecepieViewController: UIViewController {
         loadImage()
         loadUI()
         choosePic()
+        styleButtons()
         
         ///Protein circle
         DrawCircle.drawCircleForMacros(fillAmount:
@@ -179,6 +184,16 @@ class SingleRecepieViewController: UIViewController {
         let imageNum = Int.random(in: 1...4)
         backgroundImage.image = UIImage(named: "tableTop\(imageNum)")
         backgroundImage.alpha = 0.8
+    }
+    
+    func styleButtons(){
+        toRecepieButton.layer.cornerRadius = 15.0
+        toRecepieButton.clipsToBounds = true
+        toRecepieButton.setTitleColor(UIColor.lightGray, for: .selected)
+        
+        addMealButton.layer.cornerRadius = 15.0
+        addMealButton.clipsToBounds = true
+        addMealButton.setTitleColor(UIColor.lightGray, for: .selected)
     }
     
 }

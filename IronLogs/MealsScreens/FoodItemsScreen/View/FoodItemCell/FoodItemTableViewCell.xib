@@ -9,36 +9,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodItemCell" rowHeight="134" id="KGk-i7-Jjw" customClass="FoodItemTableViewCell" customModule="IronLogs" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="523" height="134"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodItemCell" rowHeight="142" id="KGk-i7-Jjw" customClass="FoodItemTableViewCell" customModule="IronLogs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="523" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="523" height="134"/>
+                <rect key="frame" x="0.0" y="0.0" width="523" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ck-zV-Rd0">
-                        <rect key="frame" x="8" y="0.0" width="507" height="114"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="114" id="vC3-ur-L64"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ck-zV-Rd0">
+                        <rect key="frame" x="8" y="8" width="507" height="126"/>
                     </imageView>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-Vi-Zpy">
-                        <rect key="frame" x="16" y="16" width="491" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="iHQ-jV-NhP"/>
-                        </constraints>
+                        <rect key="frame" x="16" y="16" width="491" height="42.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeEaten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i29-dp-fqz">
+                        <rect key="frame" x="16" y="100.5" width="491" height="25.5"/>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="-1" height="-2"/>
+                    </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sSY-hJ-hOW">
-                        <rect key="frame" x="16" y="64" width="491" height="34"/>
+                        <rect key="frame" x="16" y="62.5" width="491" height="34"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-mn-HjZ">
                                 <rect key="frame" x="0.0" y="0.0" width="118.5" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-1" height="-2"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Protein" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1L-ip-W2Y">
@@ -58,31 +60,24 @@
                             </textField>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeEaten" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i29-dp-fqz">
-                        <rect key="frame" x="16" y="106" width="491" height="22.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <size key="shadowOffset" width="-1" height="-2"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="I5Y-Vi-Zpy" secondAttribute="trailing" constant="16" id="83E-Pw-Y3Y"/>
-                    <constraint firstItem="i29-dp-fqz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="FFw-OG-hs4"/>
-                    <constraint firstAttribute="bottom" secondItem="0Ck-zV-Rd0" secondAttribute="bottom" id="JHr-p5-s3d"/>
-                    <constraint firstItem="I5Y-Vi-Zpy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Ta8-sv-oiH"/>
-                    <constraint firstItem="i29-dp-fqz" firstAttribute="top" secondItem="sSY-hJ-hOW" secondAttribute="bottom" constant="8" id="TbU-Bu-GVV"/>
-                    <constraint firstItem="sSY-hJ-hOW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="UvQ-IL-XNw"/>
-                    <constraint firstAttribute="trailing" secondItem="sSY-hJ-hOW" secondAttribute="trailing" constant="16" id="ZOA-bH-1PS"/>
-                    <constraint firstAttribute="trailing" secondItem="0Ck-zV-Rd0" secondAttribute="trailing" constant="8" id="dj5-6R-pEl"/>
-                    <constraint firstItem="0Ck-zV-Rd0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="guS-wI-KkZ"/>
-                    <constraint firstItem="0Ck-zV-Rd0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iCz-9O-ODB"/>
-                    <constraint firstItem="sSY-hJ-hOW" firstAttribute="top" secondItem="I5Y-Vi-Zpy" secondAttribute="bottom" constant="8" id="lr3-J1-eoI"/>
-                    <constraint firstAttribute="bottom" secondItem="i29-dp-fqz" secondAttribute="bottom" constant="16" id="osj-hj-KeC"/>
-                    <constraint firstItem="I5Y-Vi-Zpy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rW7-BE-jfA"/>
-                    <constraint firstAttribute="trailing" secondItem="i29-dp-fqz" secondAttribute="trailing" constant="16" id="xco-92-uF5"/>
+                    <constraint firstAttribute="bottom" secondItem="i29-dp-fqz" secondAttribute="bottom" constant="16" id="0lr-cr-0TB"/>
+                    <constraint firstAttribute="bottom" secondItem="0Ck-zV-Rd0" secondAttribute="bottom" constant="8" id="DE5-1x-VJS"/>
+                    <constraint firstAttribute="trailing" secondItem="I5Y-Vi-Zpy" secondAttribute="trailing" constant="16" id="Ico-ed-V95"/>
+                    <constraint firstItem="I5Y-Vi-Zpy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="LnR-I8-cPr"/>
+                    <constraint firstItem="sSY-hJ-hOW" firstAttribute="top" secondItem="I5Y-Vi-Zpy" secondAttribute="bottom" constant="4" id="Lx8-of-7aw"/>
+                    <constraint firstItem="i29-dp-fqz" firstAttribute="top" secondItem="sSY-hJ-hOW" secondAttribute="bottom" constant="4" id="OL0-XJ-9hb"/>
+                    <constraint firstItem="i29-dp-fqz" firstAttribute="top" secondItem="sSY-hJ-hOW" secondAttribute="bottom" constant="4" id="Pe7-3O-gZq"/>
+                    <constraint firstItem="sSY-hJ-hOW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SYU-K8-0JK"/>
+                    <constraint firstItem="0Ck-zV-Rd0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Y2f-MH-kqx"/>
+                    <constraint firstItem="I5Y-Vi-Zpy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="aM6-Ml-beL"/>
+                    <constraint firstItem="0Ck-zV-Rd0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ajW-Lc-7WE"/>
+                    <constraint firstAttribute="trailing" secondItem="sSY-hJ-hOW" secondAttribute="trailing" constant="16" id="i9r-yA-u0i"/>
+                    <constraint firstAttribute="trailing" secondItem="i29-dp-fqz" secondAttribute="trailing" constant="16" id="mWM-Fm-XsP"/>
+                    <constraint firstAttribute="trailing" secondItem="0Ck-zV-Rd0" secondAttribute="trailing" constant="8" id="uXc-SE-pJV"/>
+                    <constraint firstItem="i29-dp-fqz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xUG-5L-a8T"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -95,7 +90,7 @@
                 <outlet property="proteinTextField" destination="Z1L-ip-W2Y" id="MJm-eW-viQ"/>
                 <outlet property="timeEatenLabel" destination="i29-dp-fqz" id="mQo-u0-yLB"/>
             </connections>
-            <point key="canvasLocation" x="78.985507246376812" y="51.5625"/>
+            <point key="canvasLocation" x="78.985507246376812" y="48.883928571428569"/>
         </tableViewCell>
     </objects>
 </document>

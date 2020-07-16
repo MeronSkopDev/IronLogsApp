@@ -15,7 +15,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var carbsTextField: UITextField!
     @IBOutlet weak var fatsTextField: UITextField!
     
+    @IBOutlet weak var searchButton: UIButton!
+    
     var queryDelegate:ApiFoodItemsQuerysDelegate?
+    
+    func initCellUI(){
+        styleButton()
+    }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         var minCalories:Int
@@ -81,4 +87,9 @@ class SearchTableViewCell: UITableViewCell {
         return (minMacros,maxMacros)
     }
     
+    func styleButton(){
+        searchButton.layer.cornerRadius = 15.0
+        searchButton.clipsToBounds = true
+        searchButton.setTitleColor(UIColor.lightGray, for: .selected)
+    }
 }
