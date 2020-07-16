@@ -7,7 +7,7 @@
         <attribute name="overallFats" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="overallProtein" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <attribute name="uuid" attributeType="String"/>
         <relationship name="foodItem" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FoodItem" inverseName="dayOfEating" inverseEntity="FoodItem"/>
     </entity>
     <entity name="FoodItem" representedClassName="FoodItem" syncable="YES" codeGenerationType="class">

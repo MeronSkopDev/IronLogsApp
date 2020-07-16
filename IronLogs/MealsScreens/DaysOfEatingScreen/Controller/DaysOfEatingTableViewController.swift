@@ -17,14 +17,8 @@ class DaysOfEatingTableViewController: UITableViewController {
     
     var lastImageNumChosen = 1
     
-    
-    
-    
     lazy var fetch:NSFetchedResultsController<DayOfEating> = {
         let request = NSFetchRequest<DayOfEating>(entityName: "DayOfEating")
-        
-        
-        
         
         request.sortDescriptors = [
             NSSortDescriptor(key: "dateOfCreation", ascending: true)
