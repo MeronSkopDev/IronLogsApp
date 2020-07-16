@@ -9,7 +9,7 @@
 ***Meal documenting and searching***
 >Here you can document the meals you ate throughout the day, and look for new and fun meals and recepies (powerd by Spoonacular API https://spoonacular.com/food-api)
 
-[![DaysOfEating](https://i.imgur.com/xGeVl58.png)]() [![Meals](https://i.imgur.com/RoiVks1.png?1)]() [![RecepiesQuery](https://i.imgur.com/ijF7q8k.png?1)]()
+[![DaysOfEating](https://i.imgur.com/xGeVl58.png?1)]() [![Meals](https://i.imgur.com/RoiVks1.png?1)]() [![RecepiesQuery](https://i.imgur.com/ijF7q8k.png?1)]()
 [![Recepie](https://i.imgur.com/xU6yhqz.png?1)]()
 -
 ***Workout documenting***
