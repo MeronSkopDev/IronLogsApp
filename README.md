@@ -13,7 +13,7 @@
 [![Recepie](https://i.imgur.com/0pnzEZu.png?1)]()
 -
 ***Workout documenting***
->Here you can document you workouts
+>Here you can document your workouts
 
 [![Workouts](https://i.imgur.com/SbcPR6q.png?1)]() [![Exercises](https://i.imgur.com/ToaAL3j.png?1)]() [![Sets](https://i.imgur.com/zDkSBsO.png?1)]()
 
