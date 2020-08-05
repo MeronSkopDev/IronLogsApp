@@ -42,6 +42,7 @@ class Router{
             return
         }
         
+        
         let storyBoardChosen = isUserLoggedIn ? ifLogeedInGoTo : "Login"
         let chosenStoryBoard = UIStoryboard(name: storyBoardChosen, bundle: .main)
         window?.rootViewController = chosenStoryBoard.instantiateInitialViewController()

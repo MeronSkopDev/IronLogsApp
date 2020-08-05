@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DayOfEating" representedClassName="DayOfEating" syncable="YES" codeGenerationType="class">
-        <attribute name="dateOfCreation" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="overallCalories" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="overallCarbs" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="overallFats" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="overallProtein" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="dateOfCreation" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="overallCalories" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="overallCarbs" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="overallFats" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="overallProtein" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String"/>
         <attribute name="uuid" attributeType="String"/>
         <relationship name="foodItem" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FoodItem" inverseName="dayOfEating" inverseEntity="FoodItem"/>
     </entity>

@@ -33,7 +33,7 @@ class DaysOfEatingTableViewController: UITableViewController {
         let fetchController = NSFetchedResultsController(fetchRequest: request,
                                                          managedObjectContext: context,
                                                          sectionNameKeyPath: nil,
-                                                         cacheName: "DaysOfEating")
+                                                         cacheName: "DayOfEating")
         return fetchController
     }()
     
@@ -52,7 +52,7 @@ class DaysOfEatingTableViewController: UITableViewController {
         }
     }
     
-    
+     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
